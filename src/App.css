@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+  
+:root {
+    --color-bg: #2C2C32;
+    --color-active: #48a878;
+}
+
+.active {
+    color: var(--color-active);
+    cursor: default;
+}

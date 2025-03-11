@@ -1,0 +1,66 @@
+.comp_section__wrapp{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    border:1px solid grey;
+	border-radius: 3px;
+}
+
+.comp_section__title{
+    text-align: center;
+    font-weight: 500;
+}
+
+.delete_list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.delete_list__item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    border: 1px solid green;
+	border-radius: 3px;
+}
+.delete_list__name{
+    color:rgb(11, 141, 135);
+}
+.delete_list__email{
+    color: rgb(227, 96, 44);
+}
+.btn {
+	padding: 0 24px;
+	outline: none;
+	border: none;    
+	border-radius: 3px;
+	height: 34px;
+
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-decoration: none;
+	color: white;
+	background-color: #87b99b;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;  
+	transition: box-shadow .18s ease-out,background .18s ease-out,color .18s ease-out;
+}
+.btn:focus-visible {
+	box-shadow: 0 0 0 3px lightskyblue;
+}
+.btn:hover {
+	box-shadow: 0 1px 1px 0  #cfcfcf, 0 2px 5px 0  #cfcfcf;
+}
+.btn:active {
+	background-color: #efefef !important;
+}
+.btn:disabled {
+	background-color: #eee;
+	color: #444;
+	pointer-events: none;
+}

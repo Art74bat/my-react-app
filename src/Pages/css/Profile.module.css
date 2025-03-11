@@ -1,0 +1,14 @@
+.welcome_message{
+    padding: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    flex-grow: 1;
+    background-color: rgb(120, 183, 152);
+    box-shadow: 0 0 2px gray;
+    border-radius: 3px;
+}
+
+.welcome_message>span{
+    font-weight: 700;
+}

@@ -1,0 +1,28 @@
+.profile{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    border:1px solid rgba(73, 146, 110, 0.664);
+    border-radius: 4px;
+}
+.profile__item_title{
+    margin-bottom: 8px;
+    color: rgb(233, 169, 73);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.profile__item{
+    margin-bottom: 5px;
+    color:rgb(91, 91, 91);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.profile__item >span{
+    color: rgb(73, 146, 109);
+    background-color: white;
+}
