@@ -1,0 +1,134 @@
+.title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.team_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.team_wrapp{
+    display: flex;
+    padding: 10px;
+    max-width: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border:1px solid grey;
+}
+.team_wrapp__title{
+    color: rgb(120, 183, 152);
+}
+.team_wrapp__image{
+    width: 100px;
+}
+.team_wrapp__expir{
+    color: rgb(67, 104, 85);
+}
+
+
+/* form--------------------------------------------------- */
+
+
+.form{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+.form__label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:7px;
+    align-items: center;
+    color:rgb(91,91,91);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+
+}
+.form__input{
+    width: 100%;
+    padding:5px 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form__error{
+    color:rgb(233, 109, 87);
+}
+.form__btn {
+	padding: 0 24px;
+	outline: none;
+	border: none;    
+	border-radius: 3px;
+	height: 34px;
+
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-decoration: none;
+	color: white;
+	background-color: #87b99b;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;  
+	transition: box-shadow .18s ease-out,background .18s ease-out,color .18s ease-out;
+}
+.form__btn:focus-visible {
+	box-shadow: 0 0 0 3px lightskyblue;
+}
+.form__btn:hover {
+	box-shadow: 0 1px 1px 0  #cfcfcf, 0 2px 5px 0  #cfcfcf;
+}
+.form__btn:active {
+	background-color: #efefef !important;
+}
+.form__btn:disabled {
+	background-color: #eee;
+	color: #444;
+	pointer-events: none;
+}
+
+
+/* table---------------------------------------------------- */
+
+
+.table {
+	width: 80%;
+    margin: 0 auto;
+	margin-bottom: 20px;
+	border-collapse: collapse; 
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+.table tr td:first-child, .table tr th:first-child {
+	border-left: none;
+}
+.table tr td:last-child, .table tr th:last-child {
+	border-right: none;
+}
+
+/* modal-------------------------- */
+

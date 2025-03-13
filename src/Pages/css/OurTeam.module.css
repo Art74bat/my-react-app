@@ -1,0 +1,24 @@
+.title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.team_wrapp{
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border:1px solid grey;
+}
+.team_wrapp__title{
+    color: rgb(120, 183, 152);
+}
+.team_wrapp__image{
+    width: 100px;
+}
+.team_wrapp__expir{
+    color: rgb(67, 104, 85);
+}

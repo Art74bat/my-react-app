@@ -1,5 +1,5 @@
 // some function for help.....
-
+// данные о пользователях
 export async function getUser (token) {
     try {
         const res = await fetch('/api/users',{
@@ -13,7 +13,7 @@ export async function getUser (token) {
         console.log(error)
     }
 }
-
+// получить устройства
 export async function getDevices () {
     try {
         const res = await fetch('/api/devices');
@@ -23,7 +23,7 @@ export async function getDevices () {
         console.log(error)
     }  
 }
-
+// получитьпроизводителя
 export async function getManufacturer () {
     try {
         const res =await fetch('/api/manufacturers');
@@ -33,7 +33,7 @@ export async function getManufacturer () {
         console.log(error)
     }  
 }
-
+// получить отзывы
 export async function getReviews () {
     try {
         const res =await fetch('/api/reviews');
@@ -44,6 +44,7 @@ export async function getReviews () {
     }  
 }
 
+// данные о сообщениях(заказать звонок и т.д)
 export async function getCalls () {
     try {
         const res =await fetch('/api/calls');
@@ -54,6 +55,7 @@ export async function getCalls () {
     }  
 }
 
+// данные о работниках
 export async function getTeams () {
     try {
         const res =await fetch('/api/team');
@@ -64,4 +66,14 @@ export async function getTeams () {
     }  
 }
 
+// получить данные из формы..(эксперимент!!)
+export const getFormValues = (form) => {
+    const formData = new FormData(form);
+
+    const values = [...formData.values()];
+    const isEmpty = values.includes('');
+
+    const data = Object.fromEntries(formData);
+     return { isEmpty, data }
+}
 

@@ -5,13 +5,13 @@ import style from "../../css/Update.module.css";
 
 export default function Update () {
     const {token,user} = useContext(AppContext);
+
+    // типа форм даты...
     const [formData,setFormData]= useState({
         name:'',
         email:'',
         password:'',
     })
-    
-
     const [errors,setErrors] = useState({})
 
     async function handleUpdate (e) {
@@ -33,6 +33,7 @@ export default function Update () {
         alert(data.message);
         window.location.reload()        
     }
+
     return(
         <div className={style.comp_section__wrapp}>
             <h2 className={style.comp_section_title}>Обновить данные текущего профиля</h2>
