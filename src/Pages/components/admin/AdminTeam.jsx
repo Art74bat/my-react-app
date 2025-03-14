@@ -179,9 +179,19 @@ export default function AdminTeam () {
             {/* employee list------------------------------------ */}
 
             <h3 className={style.title}>Список работников</h3>
-                <ul>
-                    {out}
-                </ul>
+                <table className={style.table}>
+                    <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>Фамилия</th>
+                            <th>Опыт работы</th>
+                            <th>Дополнительно</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {out}
+                    </tbody>
+                </table>
             <div className={style.modal}>
             <Modal show={showModal} onCloseButtonClick={toggleShowModal} />
             </div>
