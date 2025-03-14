@@ -132,3 +132,9 @@
 
 /* modal-------------------------- */
 
+/* list */
+
+.list_item{
+    display: flex;
+    gap: 10px;
+}

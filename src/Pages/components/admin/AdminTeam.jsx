@@ -3,6 +3,7 @@ import style from  "../../css/AdminTeam.module.css"
 import { getTeams } from "../../getData";
 import { AppContext } from "../../../Context/AppContext";
 import Modal from "../Modal"
+import TeamItem from "./TeamItem";
 
 
 export default function AdminTeam () {
@@ -17,11 +18,11 @@ export default function AdminTeam () {
     };
 
     // типа форм даты...для update
-    const [formData,setFormData]= useState({
-        name:'',
-        second_name:'',
-        experience:'',
-    })
+    // const [formData,setFormData]= useState({
+    //     name:'',
+    //     second_name:'',
+    //     experience:'',
+    // })
     
     // на всякий случай
     function handleChangeImage(event) {
@@ -89,9 +90,26 @@ export default function AdminTeam () {
         loaderTeam()
     },[])
 
-    // работает на стороне сервера пока..
+    // вроде работает 
     async function handleUpdate (id) {
         // e.preventDefault()
+        //обьект для update
+        const formData ={
+            name:'',
+            second_name:'',
+            experience:'',
+        }
+        // найти запись по id
+        team.map((item) => {
+            if (item.id === id) {
+                formData.name = item.name
+                formData.second_name = item.second_name
+                formData.experience = item.experience
+            }
+            return item;
+          })
+        //   console.log(formData)
+        // обновить запись в базе
         const res =await fetch(`/api/team/${id}`,{
             method:'put',
             // роуты Team пока не защищены ..запросы без токена
@@ -113,19 +131,30 @@ export default function AdminTeam () {
         window.location.reload()        
     }
 
-    const out = team.map((item) => (
-            <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.second_name}</td>
-                <td>{ item.experience}</td>
-                <td>
-                    <button className={style.btn} type="submit" onClick={()=>deleteTeam(item.id)}>delete</button>
-                    <button className={style.btn} type="submit" onClick={()=>toggleShowModal()}>update</button>  
-                </td>
-            </tr>
+    const out = team.map((item,index) => (
+        <TeamItem 
+        key={index} 
+        item={item}
+        editItem={editItem}
+        deleteTeam={deleteTeam}
+        handleUpdate={handleUpdate}
+        // setFormData={setFormData}
+        // formData={formData}
+        />
         )
     )
 
+    function editItem(id, name, event) {
+        setTeam(
+          team.map((item) => {
+            if (item.id === id) {
+              item[name] = event.target.value;
+            }
+            return item;
+          })
+        );
+    }
+    // console.log(team)
     return (
         <>
         <h2 className={style.title}>Добавить работника</h2>
@@ -150,19 +179,9 @@ export default function AdminTeam () {
             {/* employee list------------------------------------ */}
 
             <h3 className={style.title}>Список работников</h3>
-            <table className={style.table}>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Second_name</th>
-                    <th>experience</th>
-                    <th>Delet</th>
-                </tr>
-                </thead>
-                <tbody>
+                <ul>
                     {out}
-                </tbody>
-            </table>
+                </ul>
             <div className={style.modal}>
             <Modal show={showModal} onCloseButtonClick={toggleShowModal} />
             </div>
