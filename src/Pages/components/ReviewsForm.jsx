@@ -1,3 +1,5 @@
+// форма для добавления отзыва
+
 import { useState } from "react"
 import style from  "../css/ReviewsForm.module.css"
 

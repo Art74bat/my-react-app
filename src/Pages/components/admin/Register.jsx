@@ -1,8 +1,7 @@
+// зарегить нового пользователя (для супер админа)
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "../../css/Register.module.css";
-
-
 
 export default function Register () {
 

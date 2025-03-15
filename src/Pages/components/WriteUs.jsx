@@ -1,3 +1,4 @@
+// компонент "напишите нам" 
 import { useState } from "react"
 import style from  "../css/WriteUs.module.css"
 

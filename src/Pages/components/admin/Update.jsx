@@ -1,3 +1,4 @@
+// обновить данные профиля
 import { useContext, useState } from "react"
 import { AppContext } from "../../../Context/AppContext";
 import style from "../../css/Update.module.css";

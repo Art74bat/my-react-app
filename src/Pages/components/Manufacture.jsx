@@ -6,7 +6,7 @@ import { getManufacturer} from '../getData';
 
 const Manufacture = () => {
     const [manuf,setManuf] = useState([]);
-
+// производители для вормы на странице Home
     async function loaderManuf (){
         const data = await getManufacturer()
         setManuf(data);

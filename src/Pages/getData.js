@@ -33,7 +33,40 @@ export async function getManufacturer () {
         console.log(error)
     }  
 }
-// получить отзывы
+
+// получить Price hardware
+export async function getHard () {
+    try {
+        const res =await fetch('/api/hards');
+        const data = await res.json();
+        return data 
+    } catch (error) {
+        console.log(error)
+    }  
+}
+
+// получить Price software
+export async function getSoft () {
+    try {
+        const res =await fetch('/api/softs');
+        const data = await res.json();
+        return data 
+    } catch (error) {
+        console.log(error)
+    }  
+}
+
+// получить Price corporate
+export async function getCorp () {
+    try {
+        const res =await fetch('/api/corporate');
+        const data = await res.json();
+        return data 
+    } catch (error) {
+        console.log(error)
+    }  
+}
+
 export async function getReviews () {
     try {
         const res =await fetch('/api/reviews');

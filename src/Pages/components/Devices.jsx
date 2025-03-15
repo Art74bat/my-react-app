@@ -1,4 +1,4 @@
-
+// устройства для вормы на странице Home
 import NotFound from '../Error404'
 import { useEffect, useState } from 'react';
 import { getDevices } from '../getData';

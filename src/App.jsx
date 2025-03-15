@@ -17,6 +17,9 @@ import Info from "./Pages/components/admin/Info";
 import AdminBlog from "./Pages/components/admin/AdminBlog";
 import Message from "./Pages/components/admin/Message";
 import AdminReviews from "./Pages/components/admin/AdminReviews";
+import HardPrice from "./Pages/components/HardPrice";
+import CorpPrice from "./Pages/components/CorpPrice";
+
 
 
 
@@ -38,7 +41,10 @@ function App() {
                     <Route path="reviews" element={<Manufacture />} />
                 </Route>
                 <Route path="about" element={<About />} />
-                <Route path="price" element={<Price />} />
+                <Route path="price" element={<Price />} >
+                  <Route path="individual" element={<HardPrice />}/>
+                  <Route path="legal" element={<CorpPrice />} />
+                </Route>
                 <Route path="blog" element={<Blog/>} />
                 <Route path="reviews" element={<Review/>} />
                 <Route path="contacts" element={<Contact/>} />

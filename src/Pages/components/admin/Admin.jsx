@@ -1,4 +1,4 @@
-
+// страница администратора
 // import style from "../../css/Admin.module.css";
 import { useOutletContext } from "react-router-dom";
 import Delete from "./Delete";

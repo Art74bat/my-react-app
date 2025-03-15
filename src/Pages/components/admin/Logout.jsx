@@ -6,7 +6,7 @@ import { AppContext } from "../../../Context/AppContext";
 
 
 
-
+// выход из админки
 export default function Logout () {
 
     const {token,setToken,setUser} = useContext(AppContext);

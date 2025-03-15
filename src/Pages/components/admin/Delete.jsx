@@ -1,3 +1,4 @@
+// удалть пользователя (для супер админа) 
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../../Context/AppContext";
 import { getUser } from "../../getData";

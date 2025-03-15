@@ -1,3 +1,4 @@
+// сторока с приветствием в админке
 import style from "../../css/Profile.module.css";
 
 export default function Profile ({user}) {

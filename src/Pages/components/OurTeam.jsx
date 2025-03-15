@@ -1,3 +1,5 @@
+
+// блок наша команда на страницу Home и О Нас
 import { useEffect, useState } from "react";
 import { getTeams } from "../getData";
 import style from "../css/OurTeam.module.css"

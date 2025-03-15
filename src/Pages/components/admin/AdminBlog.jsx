@@ -1,3 +1,5 @@
+// создать пост в блоге на сайте
+
 import style from "../../css/Admin.module.css";
 
 export default function AdminBlog () {

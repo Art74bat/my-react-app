@@ -1,3 +1,4 @@
+// удалить отзывы ...
 import { useContext, useEffect, useState } from "react";
 import { getReviews } from "../../getData";
 import { AppContext } from "../../../Context/AppContext";

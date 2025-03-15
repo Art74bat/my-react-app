@@ -1,3 +1,4 @@
+// создать нового работника в админке 
 import { useContext, useEffect, useState } from "react"
 import style from  "../../css/AdminTeam.module.css"
 import { getTeams } from "../../getData";
@@ -11,13 +12,15 @@ export default function AdminTeam () {
     const [errors,setErrors] = useState([]);
     const [file, setFile] = useState();
     const [team, setTeam] = useState([]);
+    // для модального окна
     const [showModal, setShowModal] = useState(false);
 
+    // показать скрыть модальное окно
     const toggleShowModal = () => {
       setShowModal(!showModal);
     };
 
-    // типа форм даты...для update
+    // типа форм даты...
     // const [formData,setFormData]= useState({
     //     name:'',
     //     second_name:'',
@@ -130,7 +133,7 @@ export default function AdminTeam () {
         alert(data.message);
         window.location.reload()        
     }
-
+    // вывод (компонент TeanItem)
     const out = team.map((item,index) => (
         <TeamItem 
         key={index} 
@@ -138,8 +141,6 @@ export default function AdminTeam () {
         editItem={editItem}
         deleteTeam={deleteTeam}
         handleUpdate={handleUpdate}
-        // setFormData={setFormData}
-        // formData={formData}
         />
         )
     )
