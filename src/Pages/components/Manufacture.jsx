@@ -16,7 +16,7 @@ const Manufacture = () => {
         loaderManuf();
     },[])
 
-    const out = manuf.map((item) => (<ul key={item.id}><li>{item.name}</li></ul>))
+    const out = manuf.map((item) => (<option key={item.id}>{item.name}</option>))
     return out? <>{out}</>:<NotFound/>
 }
 

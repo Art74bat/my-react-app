@@ -15,7 +15,7 @@ const Device = () => {
         loaderDevices();
     },[])
 
-    const out = devices.map((item) => (<ul key={item.id}><li>{item.name}</li></ul>))
+    const out = devices.map((item) => (<option key={item.id}>{item.name}</option>))
     
     return out? <>{out}</>:<NotFound/>
 }
