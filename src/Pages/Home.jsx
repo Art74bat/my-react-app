@@ -40,6 +40,7 @@ export default function Home () {
                     </ul>
                 )
             })}
+            
         <h2>manufacturers</h2>
             {manufacturers.map((item)=>{
                 return (

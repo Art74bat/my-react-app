@@ -1,4 +1,4 @@
-// компонент "напишите нам" 
+// форма "напишите нам" на странице блог и контакты
 import { useState } from "react"
 import style from  "../css/WriteUs.module.css"
 

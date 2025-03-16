@@ -1,4 +1,4 @@
-// "вызвать мастера " на странице Home
+// форма "вызвать мастера " на странице Home
 import { useState } from "react"
 import style from  "../css/MasterCall.module.css"
 

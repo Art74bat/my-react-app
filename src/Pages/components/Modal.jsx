@@ -1,4 +1,4 @@
-
+// модальное окно
 import style from "../css/Modal.module.css"
 
 const Modal = ({ show, onCloseButtonClick }) => {

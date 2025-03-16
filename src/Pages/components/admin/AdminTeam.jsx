@@ -61,12 +61,12 @@ export default function AdminTeam () {
         // window.location.reload()
     }
 
-    // работает
+    // список работников ..работает
     async function loaderTeam() {
         const data = await getTeams();
         setTeam(data);
     }
-    // работает
+    //удалить работника.. работает
     async function deleteTeam (id) {
         const res =await fetch(`/api/team/${id}`,{
             method:'delete',
@@ -93,7 +93,7 @@ export default function AdminTeam () {
         loaderTeam()
     },[])
 
-    // вроде работает 
+    // обновить раьотника ...вроде работает 
     async function handleUpdate (id) {
         // e.preventDefault()
         //обьект для update
@@ -145,6 +145,7 @@ export default function AdminTeam () {
         )
     )
 
+    // для обновления работника
     function editItem(id, name, event) {
         setTeam(
           team.map((item) => {
@@ -162,37 +163,45 @@ export default function AdminTeam () {
 
         {/* form---------------------------- */}
 
-            <form onSubmit={addTeam} className={style.form}>
-                <label className={style.form__label}>
-                {errors.email && <p className={style.form__error}>{ errors.email[0] }</p>}
-                    <span>Картинка* :</span> 
-                    <input type="file" 
-                    name="image" 
-                    placeholder="Проблема" 
-                    id="image"
-                    // на всякий случай
-                    onChange={handleChangeImage}
-                    className={style.form__input}/>
-                </label>                   
-                <button type="submit" className={style.form__btn}>Отправить</button>
-            </form>
+            <div className="employes">
+                <form onSubmit={addTeam} className={style.form}>
+                    <label className={style.form__label}>
+                    {errors.email && <p className={style.form__error}>{ errors.email[0] }</p>}
+                        <span>Картинка* :</span> 
+                        <input type="file" 
+                        name="image" 
+                        placeholder="Проблема" 
+                        id="image"
+                        // на всякий случай
+                        onChange={handleChangeImage}
+                        className={style.form__input}/>
+                    </label>                   
+                    <button type="submit" className={style.form__btn}>Отправить</button>
+                </form>
 
-            {/* employee list------------------------------------ */}
+                {/* employee list------------------------------------ */}
 
-            <h3 className={style.title}>Список работников</h3>
+                <h3 className={style.title}>Список работников</h3>
                 <table className={style.table}>
-                    <thead>
-                        <tr>
-                            <th>Имя</th>
-                            <th>Фамилия</th>
-                            <th>Опыт работы</th>
-                            <th>Дополнительно</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {out}
-                    </tbody>
+                        <thead>
+                            <tr>
+                                <th>Имя</th>
+                                <th>Фамилия</th>
+                                <th>Опыт работы</th>
+                                <th>Дополнительно</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {out}
+                        </tbody>
                 </table>
+            </div>
+            <div className="price_lists">
+                
+            </div>
+
+
+
             <div className={style.modal}>
             <Modal show={showModal} onCloseButtonClick={toggleShowModal} />
             </div>

@@ -110,3 +110,20 @@ export const getFormValues = (form) => {
      return { isEmpty, data }
 }
 
+// Вспомогательная функция для вывода списка пользователей
+// export function renderPriceList (prices) {
+//     if (!prices || prices.length === 0) {
+//       return <p>No data found.</p>; // Если ничего нет, выводим сообщение
+//     }
+  
+//     return (
+//       <ul>
+//         {prices.map(price => (
+//           <li key={price.id}>
+//             <strong>{price.category}</strong> - {price.description}- {price.price}
+//           </li>
+//         ))}
+//       </ul>
+//     );
+//   };
+
