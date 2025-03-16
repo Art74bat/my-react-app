@@ -93,7 +93,7 @@ export default function AdminTeam () {
         loaderTeam()
     },[])
 
-    // обновить раьотника ...вроде работает 
+    // обновить работника ...вроде работает 
     async function handleUpdate (id) {
         // e.preventDefault()
         //обьект для update
@@ -196,14 +196,9 @@ export default function AdminTeam () {
                         </tbody>
                 </table>
             </div>
-            <div className="price_lists">
-                
-            </div>
-
-
-
+            
             <div className={style.modal}>
-            <Modal show={showModal} onCloseButtonClick={toggleShowModal} />
+                <Modal show={showModal} onCloseButtonClick={toggleShowModal} />
             </div>
         </>
     )

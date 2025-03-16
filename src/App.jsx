@@ -19,6 +19,7 @@ import Message from "./Pages/components/admin/Message";
 import AdminReviews from "./Pages/components/admin/AdminReviews";
 import PriceList from "./Pages/components/PriceList";
 import CorpPrice from "./Pages/components/CorpPrice";
+import AdminPrice from "./Pages/components/admin/AdminPrice";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
                 <Route path="login" element={<Login/>} >
                   <Route path="admin" element={<Admin />} />
                   <Route path="info" element={<Info />} />
+                  <Route path="prices" element={<AdminPrice />} />
                   <Route path="ablog" element={<AdminBlog />} />
                   <Route path="areviews" element={<AdminReviews />} />
                   <Route path="message" element={<Message />} />

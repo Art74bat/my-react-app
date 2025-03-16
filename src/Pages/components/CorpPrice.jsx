@@ -18,11 +18,13 @@ export default function CorpPrice () {
     },[])
 
     // console.log(corporate)
+
+    // сортировать по категориям и создать объект  {ключ: объект}
     const CorpGroupedObject = corporate.reduce((acc, item) => {
-        if (!acc[item.groupe]) {
-          acc[item.groupe] = []; // Создаем массив для каждой категории
+        if (!acc[item.category]) {
+          acc[item.category] = []; // Создаем массив для каждой категории
         }
-        acc[item.groupe].push(item); // Добавляем объект в соответствующую категорию
+        acc[item.category].push(item); // Добавляем объект в соответствующую категорию
         return acc;
       }, {});
     // console.log(CorpGroupedObject)

@@ -49,6 +49,7 @@ export default function Login () {
                         <ul className={style.navigate}>
                             <li className={style.navigate__item}><Link className={style.navigate_link} to="admin">Профиль</Link></li>
                             <li className={style.navigate__item}><Link className={style.navigate_link} to="info">Информация на сайте</Link></li>
+                            <li className={style.navigate__item}><Link className={style.navigate_link} to="prices">Прайс лист</Link></li>
                             <li className={style.navigate__item}><Link className={style.navigate_link} to="ablog">Блог</Link></li>
                             <li className={style.navigate__item}><Link className={style.navigate_link} to="areviews">Отзывы</Link></li>
                             <li className={style.navigate__item}><Link className={style.navigate_link} to="message">Сообщения</Link></li>

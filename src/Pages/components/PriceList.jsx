@@ -15,24 +15,25 @@ export default function PriceList () {
         const data = await getSoft()
         setSoft(data);
     }
-    // сортировать и создать массивы по категориям 
+    // сортировать по категориям и создать объект по категориям {ключ: объект}
     const HardGroupedObject = hard.reduce((acc, item) => {
-        if (!acc[item.groupe]) {
-          acc[item.groupe] = []; // Создаем массив для каждой категории
+        if (!acc[item.category]) {
+          acc[item.category] = []; // Создаем массив для каждой категории
         }
-        acc[item.groupe].push(item); // Добавляем объект в соответствующую категорию
+        acc[item.category].push(item); // Добавляем объект в соответствующую категорию
         return acc;
       }, {});
-    // сортировать и создать массивы по категориям 
+
+    // сортировать по категориям и создать объект  {ключ: объект}
     const SoftGroupedObject = soft.reduce((acc, item) => {
-        if (!acc[item.groupe]) {
-          acc[item.groupe] = []; // Создаем массив для каждой категории
+        if (!acc[item.category]) {
+          acc[item.category] = []; // Создаем массив для каждой категории
         }
-        acc[item.groupe].push(item); // Добавляем объект в соответствующую категорию
+        acc[item.category].push(item); // Добавляем объект в соответствующую категорию
         return acc;
       }, {});
       
-      // console.log(SoftGroupedObject);
+      console.log(SoftGroupedObject);
 
       const outHard = renderPriceList(HardGroupedObject)
 
