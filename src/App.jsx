@@ -17,17 +17,8 @@ import Info from "./Pages/components/admin/Info";
 import AdminBlog from "./Pages/components/admin/AdminBlog";
 import Message from "./Pages/components/admin/Message";
 import AdminReviews from "./Pages/components/admin/AdminReviews";
-import HardPrice from "./Pages/components/HardPrice";
+import PriceList from "./Pages/components/PriceList";
 import CorpPrice from "./Pages/components/CorpPrice";
-
-
-
-
-
-
-
-
-
 
 
 function App() {
@@ -42,7 +33,7 @@ function App() {
                 </Route>
                 <Route path="about" element={<About />} />
                 <Route path="price" element={<Price />} >
-                  <Route path="individual" element={<HardPrice />}/>
+                  <Route path="individual" element={<PriceList />}/>
                   <Route path="legal" element={<CorpPrice />} />
                 </Route>
                 <Route path="blog" element={<Blog/>} />

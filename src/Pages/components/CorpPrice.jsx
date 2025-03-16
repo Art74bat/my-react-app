@@ -12,7 +12,12 @@ export default function CorpPrice () {
         const data = await getCorp()
         setCorporate(data);
     }
-   
+    
+    useEffect(()=>{
+        loaderCorp();
+    },[])
+
+    // console.log(corporate)
     const CorpGroupedObject = corporate.reduce((acc, item) => {
         if (!acc[item.groupe]) {
           acc[item.groupe] = []; // Создаем массив для каждой категории
@@ -20,18 +25,14 @@ export default function CorpPrice () {
         acc[item.groupe].push(item); // Добавляем объект в соответствующую категорию
         return acc;
       }, {});
-    console.log(CorpGroupedObject)
-    const outPers = renderPriceList(CorpGroupedObject.personal)
-    const outFamil = renderPriceList(CorpGroupedObject.family)
-    useEffect(()=>{
-        loaderCorp();
-    },[])
+    // console.log(CorpGroupedObject)
 
+
+    const out = renderPriceList(CorpGroupedObject)
+   
     return (
         <>
-        {/* <h2>Corp Price List</h2> */}
-        {outPers}
-        {outFamil}
+        {out}
         </>
     )
 }

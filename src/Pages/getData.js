@@ -1,4 +1,7 @@
 // some function for help.....
+
+// import { data } from "react-router-dom";
+
 // данные о пользователях
 export async function getUser (token) {
     try {
@@ -65,6 +68,7 @@ export async function getCorp () {
     } catch (error) {
         console.log(error)
     }  
+
 }
 
 export async function getReviews () {

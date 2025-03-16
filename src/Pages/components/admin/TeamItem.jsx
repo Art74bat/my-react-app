@@ -1,4 +1,4 @@
-// для вывода работников на странице о нас и Home
+// для вывода работников в компоненте AdminTeam
 import { useState } from "react"
 import style from  "../../css/AdminTeam.module.css"
 

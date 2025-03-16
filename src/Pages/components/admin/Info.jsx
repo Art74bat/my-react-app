@@ -1,3 +1,4 @@
+// раздел для изменения информации выводимой на сайте (админка)
 import style from "../../css/Admin.module.css";
 import AdminTeam from "./AdminTeam";
 

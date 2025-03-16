@@ -1,19 +1,29 @@
 
 
 // Вспомогательная функция для вывода СПИСКА пользователей
+
 export function renderPriceList (prices) {
-    if (!prices || prices.length === 0) {
+  // длина обьекта))
+  const length = Object.keys(prices)
+
+    if (!prices || length.lenght === 0) {
       return <p className="error">No data found.</p>; // Если ничего нет, выводим сообщение
     }
-  
+
     return (
+      <div>
+        <h1>Price list</h1>
+      {
       <ul>
-        <li><strong>{prices[0].category}</strong></li>
-        {prices.map(price => (
-          <li key={price.id}>
-            {price.description}- {price.price}
+      {Object.entries(prices).map(([key, value]) => (
+          <li key={key}>
+            <strong>{key}:</strong> {value.map((item,index)=>{
+              return <p key={index}>{item.description}</p>
+            })}
           </li>
         ))}
-      </ul>
+        </ul>
+      }
+      </div>
     );
   };
