@@ -1,0 +1,203 @@
+.footer {
+    padding-top: 31px;
+    padding-bottom: 27px;
+    background-color: rgb(11, 20, 39);
+  }
+  .footer__wrapp {
+    width: 1080px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-bottom: 42px;
+    display: flex;
+    border-bottom: 3px solid #e7742e;
+  }
+  .information {
+    max-width: 252px;
+    margin-right: 60px;
+  }
+  .information .logo__pic {
+    margin-bottom: 60px;
+  }
+.information .logo__img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .information__title {
+    margin-bottom: 24px;
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: left;
+  }
+  .information__descript {
+    color: rgb(180, 180, 180);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: left;
+  }
+  .menu {
+    margin-top: 23px;
+    margin-right: 40px;
+    font-family: "Montserrat-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .menu__list {
+    width: 140px;
+    margin: 0;
+  }
+ .menu__item {
+    margin-bottom: 16px;
+  }
+ .menu__link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  .services {
+    margin-top: 23px;
+    margin-right: 75px;
+  }
+  .services__title {
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .services__list {
+    width: 236px;
+  }
+ .services__item {
+    margin-bottom: 12px;
+  }
+.services__link {
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: left;
+    text-decoration: none;
+  }
+ .contacts {
+    margin-bottom: 25px;
+  }
+ .contacts .phone__item {
+    width: 277px;
+    display: flex;
+    gap: 4px;
+    margin-bottom: 5px;
+  }
+  .contacts .phone__img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+.contacts .phone__link {
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: left;
+    text-decoration: none;
+  }
+  .contacts .position {
+    margin-bottom: 36px;
+  }
+  .contacts .position__item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+  .contacts .position__img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .contacts .position__descript {
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: left;
+  }
+  .contacts .social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .contacts .social__img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+ .contacts .social__link {
+    display: block;
+  }
+ .footer_bottom {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_bottom .copyright {
+    display: flex;
+  }
+ .footer_bottom .copyright__link {
+    color: white;
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration: none;
+  }
+ .footer_bottom .copyright__text {
+    color: #e7742e;
+  }
+ .footer_bottom__map {
+    margin-right: 37px;
+    color: white;
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration: none;
+  }
+ .footer_bottom__politica {
+    position: relative;
+    color: white;
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration: none;
+  }
+  .footer_bottom__politica::before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: -18px;
+    background-color: #e7742e;
+  }
+  

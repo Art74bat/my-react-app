@@ -8,9 +8,9 @@
 
 /* ==============services==================================== */
 
-.services{
+/* .services{
   
-}
+} */
 .form__error{
   color:rgb(233, 109, 87);
 }
@@ -326,10 +326,10 @@
     color: #222;
     outline: none;
   }
-  .call_master .section_form__select option {
+  .section_form__select option {
     font-weight: normal;
   }
-  .call_master .section_form *[dir=rtl] .select, .call_master .section_form :root:lang(ar) .select, .call_master .section_form :root:lang(iw) .select {
+  .section_form *[dir=rtl] .select, .call_master .section_form :root:lang(ar) .select, .call_master .section_form :root:lang(iw) .select {
     background-position: left 0.7em top 50%, 0 0;
     padding: 0.6em 0.8em 0.5em 1.4em;
   }
@@ -373,8 +373,7 @@
     color: #222;
     outline: none;
   }
-  .call_master .section_form__text_area {
- 
+ .section_form__text_area {
     max-width: 528px;   
     width: 100%;
     height: 204px;
@@ -394,18 +393,18 @@
             appearance: none;
     background-color: #fff;
   }
-  .call_master .section_form input[type=checkbox] {
+  .section_form input[type=checkbox] {
     accent-color: #f7b56a;
     width: 26px;
     height: 26px;
     border: 1px solid rgb(180, 180, 180);
   }
-  .call_master .section_form__wrapp {
+  .section_form__wrapp {
     display: flex;
     gap: 20px;
     margin-bottom: 32px;
   }
-  .call_master .section_form__label_check_box {
+  .section_form__label_checkbox {
     color: rgb(11, 20, 39);
     font-family: "Montserrat-Regular", sans-serif;
     font-size: 14px;
@@ -413,7 +412,7 @@
     line-height: 100%;
     text-align: left;
   }
-  .call_master .section_form__checkbox_link {
+  .section_form__checkbox_link {
     text-decoration: none;
     color: rgb(11, 20, 39);
     font-family: "Montserrat-SemiBold", sans-serif;
@@ -432,7 +431,7 @@
     color: #222;
     outline: none;
   }
-  .call_master .section_form input::-moz-placeholder {
+.section_form input::-moz-placeholder {
     color: rgb(180, 180, 180);
     font-family: "Montserrat-Medium", sans-serif;
     font-size: 18px;
@@ -440,7 +439,7 @@
     line-height: 140%;
     text-align: left;
   }
-  .call_master .section_form input::placeholder {
+ .section_form input::placeholder {
     color: rgb(180, 180, 180);
     font-family: "Montserrat-Medium", sans-serif;
     font-size: 18px;
@@ -448,7 +447,7 @@
     line-height: 140%;
     text-align: left;
   }
-  .call_master .section_form .submit_btn {
+ .submit_btn {
     align-self: center;
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -470,24 +469,24 @@
     background: radial-gradient(50% 50% at 50% 50%, rgb(247, 167, 12), rgb(231, 116, 46) 100%);
     cursor: pointer;
   }
-  .call_master .advertisement_wrapp {
+  .advertisement_wrapp {
     max-width: 1080px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 56px;
   }
-  .call_master .advertisement__pic {
+  .advertisement__pic {
     width: 344px;
     height: 252px;
     flex-shrink: 0;
   }
-  .call_master .advertisement__img {
+  .advertisement__img {
     width: 100%;
     -o-object-fit: contain;
        object-fit: contain;
   }
-  .call_master .advertisement__descript {
+  .advertisement__descript {
     color: rgb(11, 20, 39);
     font-family: "Montserrat-Regular", sans-serif;
     font-size: 18px;

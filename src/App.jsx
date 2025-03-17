@@ -1,4 +1,4 @@
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import './App.css'
 import Home from './Pages/Home';
 import Blog from "./Pages/Blog";
@@ -23,8 +23,10 @@ import AdminPrice from "./Pages/components/admin/AdminPrice";
 
 
 function App() {
+  const Location = useLocation();
   return (
     <>
+
         <Routes>
             <Route path="/" element={<AppLayout />}>
                 <Route index element={<Home />} />
