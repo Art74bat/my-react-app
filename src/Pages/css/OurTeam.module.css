@@ -1,6 +1,10 @@
 .our_team {
     max-width: 1080px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -13,6 +17,7 @@
     line-height: 120%;
     text-align: center;
     text-transform: uppercase;
+    border-bottom: 2px solid rgb(231, 116, 46);;
   }
   .our_team__description {
     margin-bottom: 40px;

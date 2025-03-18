@@ -634,19 +634,6 @@
     background-color: rgb(11, 20, 39);
   }
 
-
-
-
-
-  
-  /* ------------------------------------------------------------------ */
-
-
-
-
-
-
-
   .card:nth-child(3n) {
     border-right: none;
   }
@@ -727,3 +714,82 @@
     line-height: 130%;
     text-align: left;
   }
+
+
+
+/* when-call-master ======================================== */
+
+
+
+
+  .when_call_master {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .when_call_master__wrapp {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .when_call_master__title {
+    margin-bottom: 32px;
+    color: #e7742e;
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .when_call_master_card {
+    display: flex;
+    gap: 44px;
+    list-style: none;
+    margin-bottom: 24px;
+  }
+  .when_call_master_card__title {
+    max-width: 300px;
+    flex-shrink: 0;
+    color: rgb(11, 20, 39);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .when_call_master_card__descript {
+    color: rgb(11, 20, 39);
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: left;
+  }
+  .when_call_master__descript {
+    margin-bottom: 40px;
+    color: rgb(11, 20, 39);
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+  .when_call_master__btn {
+    width: 379px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(11, 20, 39);
+    margin: 0 auto;
+    font-family: "Montserrat-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(247, 167, 12), rgb(231, 116, 46) 100%);
+  }
+  
