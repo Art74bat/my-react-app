@@ -1,0 +1,78 @@
+
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.title{
+    margin-top: 32px;
+    flex-grow: 0;
+    align-self: center;
+    padding-bottom: 12px;
+    color: rgb(11, 20, 39);
+    font-family: 'Montserrat-Medium',sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    border-bottom: 1px solid red;;
+}
+.wrapp{
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+.contacts_map{
+    margin-top: 40px;
+    margin-bottom: 28px;
+}
+.contacts_wrapp{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap:116px;
+    /* flex-wrap: wrap; */
+}
+.contacts_list{
+    display: flex;
+    width: 436px;
+    /* flex-grow: 1; */
+    flex-shrink: 0;
+    flex-direction: column;
+    list-style: none;
+}
+.contacts_item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:16px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgb(222, 222, 222);
+}
+/* .contacts_img{
+
+} */
+.contacts_text{
+    color: rgb(11, 20, 39);
+    font-family: 'Montserrat-Regular',sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.inner_wrapp{
+
+}
+.descript{
+    color: rgb(11, 20, 39);
+    font-family: 'Montserrat-Regular',sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: left;
+}

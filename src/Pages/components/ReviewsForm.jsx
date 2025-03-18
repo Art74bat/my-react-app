@@ -30,12 +30,13 @@ export default function ReviewsForm () {
     }
 
     return (
-        <>
-        <h2>Оставить отзыв</h2>
+        <section className={style.add_review}>
+
             <form onSubmit={addReview} className={style.form}>
-            <label className={style.form__label}>
+            <h2 className={style.title}>Оставить отзыв</h2>
+                <label className={style.form__label}>
                 {errors.password && <p className={style.form__error}>{ errors.password[0] }</p>}
-                    <span>Имя* :</span>
+                    <span className={style.label_title}>Имя* :</span>
                     <input 
                     type="text"
                     name="name"
@@ -47,7 +48,7 @@ export default function ReviewsForm () {
                 </label>
                 <label className={style.form__label}>
                 {errors.email && <p className={style.form__error}>{ errors.email[0] }</p>}
-                    <span>Email* :</span> 
+                    <span className={style.label_title}>Email* :</span> 
                     <input type="email" 
                     name="email" 
                     placeholder="Email" 
@@ -58,18 +59,21 @@ export default function ReviewsForm () {
                 </label>                   
                 <label className={style.form__label}>
                 {errors.password && <p className={style.form__error}>{ errors.password[0] }</p>}
-                    <span>Отзыв* :</span>
-                    <input 
-                    type="text"
+                    <span className={style.label_title}>Отзыв* :</span>
+                    <textarea 
+                    rows="5" 
+                    cols="54"
                     name="review"
-                    placeholder="Отзыв" 
                     id="text"
                     value={formData.review} 
                     onChange={(e)=>setFormData({...formData, review: e.target.value})}
-                    className={style.form__input}/>
+                    className={style.form__area}></textarea>
+                </label>
+                <label className={style.checkbox_label}>
+                    <input type="checkbox" name="policy"/> <span className={style.checkbox_text}>Даю согласие на обработку моих персональных данных и принимаю <a className={style.link} href="#">политику конфиденциальности</a></span>
                 </label>
                 <button type="submit" className={style.form__btn}>Добавить</button>
             </form>
-        </>
+        </section>
     )
 }

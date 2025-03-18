@@ -1,24 +1,69 @@
-.title{
-    text-align: center;
-    margin-bottom: 10px;
-}
-.team_wrapp{
-    display: flex;
+.our_team {
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 10px;
-    max-width: 200px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .our_team__title {
+    margin-bottom: 46px;
+    color: rgb(11, 20, 39);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .our_team__description {
+    margin-bottom: 40px;
+    color: rgb(11, 20, 39);
+    font-family: 'Montserrat-Regular',sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
+  }
+  .our_team__card_wrapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+.card_team {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    border:1px solid grey;
-}
-.team_wrapp__title{
-    color: rgb(120, 183, 152);
-}
-.team_wrapp__image{
-    width: 100px;
-}
-.team_wrapp__expir{
-    color: rgb(67, 104, 85);
-}
+    gap: 12px;
+    width: 252px;
+  }
+.card_team__pic {
+    width: 252px;
+    height: 252px;
+    /* border:1px solid red; */
+    border-radius: 50%;
+  }
+.card_team__img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+       border-radius: 50%;
+  }
+.card_team__title {
+    color: rgb(11, 20, 39);
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+.card_team__descript {
+    color: rgb(11, 20, 39);
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
+  }
+  

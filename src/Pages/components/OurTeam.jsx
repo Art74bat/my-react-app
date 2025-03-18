@@ -18,17 +18,40 @@ export default function OurTeam () {
     },[])
 
     const out = teams.map((item) => (
-            <div key={item.id} className={style.team_wrapp}>
-                <img className={style.team_wrapp__image} src={`${item.img_path}`} alt="picture" />
-                <p className={style.team_wrapp__title}><span>{item.name} </span><span>{item.second_name}</span></p>
-                <p className={style.team_wrapp__expir}>Опыт работы: {item.experience} лет</p>
+            <div className={style.card_team}>
+                <picture className={style.card_team__pic}>
+                    <img className={style.card_team__img} src={`${item.img_path}`} alt='Picture'/>
+                </picture>	
+                <h2 className={style.card_team__title}>{item.name}</h2>
+                <p className={style.card_team__descript}>Опыт работы – {item.experience} лет</p>
             </div>
+            
         )
     )
     return(
         <>
-        <h2 className={style.title}>Наша команда</h2>
-        {out}
+            <section className={style.our_team}>
+                <div className={style.our_team__title}>наша команда</div>
+                <p className={style.our_team__description}>В команде мастеров компьютерного сервиса Geko объединились профессионалы, которые хорошо знают и любят свое дело. Огромный опыт, современная техническая база и коллективный потенциал позволяют нам оперативно и качественно решать любые проблемы, возникшие с вашей компьютерной техникой.</p>
+                <div className={style.our_team__card_wrapp}>
+                    {/* <div className={style.card_team}>
+                        <picture className={style.card_team__pic}>
+                        <img className={style.card_team__img} src='../public/images/test.jpg' alt='Picture'/>
+                        </picture>	
+                        <h2 className={style.card_team__title}>Сергей Александров</h2>
+                        <p className={style.card_team__descript}>Опыт работы – 10 лет</p>
+                    </div>
+                    <div className={style.card_team}>
+                        <picture className={style.card_team__pic}>
+                        <img className={style.card_team__img} src='../public/images/test.jpg' alt='Picture'/>
+                        </picture>	
+                        <h2 className={style.card_team__title}>Сергей Александров</h2>
+                        <p className={style.card_team__descript}>Опыт работы – 10 лет</p>
+                    </div> */}
+                    {out}
+                </div>
+            </section>
+   
         </>
     )
 }

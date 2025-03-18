@@ -108,7 +108,20 @@
  .navigate__list {
     display: flex;
     list-style: none;
-    gap: 23px;
+    gap: 17px;
+  }
+  .navigate__item{
+    position: relative;
+  }
+  .navigate__item::after{
+    content: "";
+    display: block;
+    width: 3px;
+    height: 100%;
+    background-color: #e7742e;
+    position: absolute;
+    bottom: 0px;
+    right: -10px;
   }
 .navigate__item_link {
     list-style: none;

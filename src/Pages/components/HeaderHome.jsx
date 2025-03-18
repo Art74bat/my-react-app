@@ -58,7 +58,7 @@ export default function HeaderHome () {
                             </div>
                         </li>
                         <li className={styles.navigate__item}>
-                        <Link to="/price" className={styles.navigate__item_link}>Прайс лист</Link>
+                        <Link to="/price" className={styles.navigate__item_link}>Прайс-Лист</Link>
                         </li>
                         <li className={styles.navigate__item}>
                         <Link to="/reviews" className={styles.navigate__item_link}>Отзывы</Link>
