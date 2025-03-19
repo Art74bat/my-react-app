@@ -6,6 +6,8 @@ import Manufacture from "./Manufacture";
 
 export default function MasterCall () {
     const [errors,setErrors] = useState([]);
+    
+    // типа formData....
     const [formData,setFormData]= useState({
         name:'',
         phone:'',

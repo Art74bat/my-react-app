@@ -1,6 +1,7 @@
 import OurTeam from "./components/OurTeam"
 import style from "./css/About.module.css"
 import Review from './Review';
+import CaruselReviews from './components/CaruselReviews';
 
 
 export default function About () {
@@ -14,11 +15,11 @@ export default function About () {
              <p className={style.our_target__descript}>Мы ориентированы на долгосрочное сотрудничество с нашими клиентами и на рекомендации. Просим вас после    ремонта, выполненного нашими специалистами, оставить честный отзыв о нашей работе на независимых сайтах www   <a className={style.our_target__link} href="#">.otzovik.com</a> и <a className={style.our_target__link}href="#">www.irecommend.ru</a>, это будет вашим вкладом в нашу борьбу с недобросовестными     мастерскими-однодневками.</p>
            </div>
         </section>
-        <section className={style.our_team}>
-            <div className={style.our_team__wrapp}>
+        {/* <section className={style.our_team}>
+            <div className={style.our_team__wrapp}> */}
                 <OurTeam/>
-            </div>
-        </section>
+            {/* </div>
+        </section> */}
         <section className={style.banner}>
             <div className={style.banner__wrapp}>
                 {/* НАДО БЫ SVG!!!!!!!!!!!!!!!!!!!!!!!!!! */}
@@ -150,7 +151,7 @@ export default function About () {
                 <p className={style.payment__descript}>Оплата производится в соответствии с условиями заключенного договора.</p>
             </div>
         </section>
-        <Review/>
+        <CaruselReviews/>
         <section class={style.why_us}>
                 <h2 class={style.why_us__title}>Программа лояльности</h2>
                 <div className={style.card_help}>

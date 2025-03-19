@@ -16,22 +16,22 @@ export default function OurTeam () {
     useEffect(()=>{
         loaderTeams();
     },[])
-
+    console.log(teams);
     const out = teams.map((item) => (
             <div key={item.id} className={style.card_team}>
                 <picture className={style.card_team__pic}>
                     <img className={style.card_team__img} src={`${item.img_path}`} alt='Picture'/>
                 </picture>	
                 <h2 className={style.card_team__title}>{item.name}</h2>
+                <h2 className={style.card_team__title}>{item.second_name}</h2>
                 <p className={style.card_team__descript}>Опыт работы – {item.experience} лет</p>
             </div>
-            
         )
     )
     return(
         <>
             <section className={style.our_team}>
-                <div className={style.our_team__title}>наша команда</div>
+                <h2 className={style.our_team__title}>наша команда</h2>
                 <p className={style.our_team__description}>В команде мастеров компьютерного сервиса Geko объединились профессионалы, которые хорошо знают и любят свое дело. Огромный опыт, современная техническая база и коллективный потенциал позволяют нам оперативно и качественно решать любые проблемы, возникшие с вашей компьютерной техникой.</p>
                 <div className={style.our_team__card_wrapp}>
                     <div className={style.card_team}>

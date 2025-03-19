@@ -51,7 +51,7 @@ export default function CaruselReviews () {
 
   return (
     <div className={styles.reviews}>      
-        <div class={styles.reviews__top_wrapp}>
+        <div className={styles.reviews__top_wrapp}>
 
             {/* кнопка назад */}
             <button onClick={prevSlide} className={styles.button}>
@@ -94,7 +94,7 @@ export default function CaruselReviews () {
             {/* карточки с отзывами */}
             {visibleCards.map((review) => (
                 <ul key={review.id} class={styles.reviews_card}>
-                    <li className={styles.reviews_card__title}><span className={styles.reviews_card__icon}>А</span><span>{review.name}<br></br> {review.second_name}</span></li>
+                    <li className={styles.reviews_card__title}><span className={styles.reviews_card__icon}>{review.name.charAt(0)}</span><span>{review.name}<br></br> {review.second_name}</span></li>
                     <li className={styles.reviews_card__date}>{review.created_at}</li>
                     <li className={styles.reviews_card__description}>{review.review}</li>
                 </ul>

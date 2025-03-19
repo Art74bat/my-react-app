@@ -103,31 +103,25 @@ export async function getTeams () {
     }  
 }
 
-// получить данные из формы..(эксперимент!!)
-export const getFormValues = (form) => {
-    const formData = new FormData(form);
 
-    const values = [...formData.values()];
-    const isEmpty = values.includes('');
-
-    const data = Object.fromEntries(formData);
-     return { isEmpty, data }
+export async function getPosts () {
+    try {
+        const res =await fetch('/api/posts');
+        const data = await res.json();
+        return data 
+    } catch (error) {
+        console.log(error)
+    }  
 }
 
-// Вспомогательная функция для вывода списка пользователей
-// export function renderPriceList (prices) {
-//     if (!prices || prices.length === 0) {
-//       return <p>No data found.</p>; // Если ничего нет, выводим сообщение
-//     }
-  
-//     return (
-//       <ul>
-//         {prices.map(price => (
-//           <li key={price.id}>
-//             <strong>{price.category}</strong> - {price.description}- {price.price}
-//           </li>
-//         ))}
-//       </ul>
-//     );
-//   };
+export async function getPost (id) {
+    try {
+        const res =await fetch(`/api/posts/${id}`);
+        const data = await res.json();
+        return data 
+    } catch (error) {
+        console.log(error)
+    }  
+}
+
 

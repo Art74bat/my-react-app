@@ -1,12 +1,10 @@
-// раздел для изменения информации выводимой на сайте (админка)
-import style from "../../css/Admin.module.css";
+// раздел для изменения информации о работника на сайте (админка)
 import AdminTeam from "./AdminTeam";
 
 export default function Info () {
 
     return (
         <>
-            <h2 className={style.title}>Информация на сайте</h2>
             {/* список работников */}
             <AdminTeam/>
         </>

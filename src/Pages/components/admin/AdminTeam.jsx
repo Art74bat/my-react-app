@@ -1,205 +1,247 @@
-// создать нового работника в админке 
-import { useContext, useEffect, useState } from "react"
-import style from  "../../css/AdminTeam.module.css"
+import { useContext, useEffect, useState } from "react";
+import style from "../../css/AdminTeam.module.css";
 import { getTeams } from "../../getData";
 import { AppContext } from "../../../Context/AppContext";
-import Modal from "../Modal"
 import TeamItem from "./TeamItem";
 
-
-export default function AdminTeam () {
-    const {token} = useContext(AppContext);
-    const [errors,setErrors] = useState([]);
-    const [file, setFile] = useState();
+export default function AdminTeam() {
+    const { token } = useContext(AppContext);
+    const [file, setFile] = useState(null);
+    const [name, setName] = useState("");
+    const [second_name, setSecondName] = useState("");
+    const [experience, setExperience] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
     const [team, setTeam] = useState([]);
-    // для модального окна
-    const [showModal, setShowModal] = useState(false);
 
-    // показать скрыть модальное окно
-    const toggleShowModal = () => {
-      setShowModal(!showModal);
+    const handleFileChange = (e) => {
+        setFile(e.target.files[0]);
     };
 
-    // типа форм даты...
-    // const [formData,setFormData]= useState({
-    //     name:'',
-    //     second_name:'',
-    //     experience:'',
-    // })
-    
-    // на всякий случай
-    function handleChangeImage(event) {
-        setFile(event.target.files[0]);
-      }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    // вот эта штука не работает!!!!!!!!!!!!!!!
-    async function addTeam (e) {
-        e.preventDefault()
-        // для передачи данных на сервер
+        if (!file) {
+            alert('Пожалуйста, выберите файл');
+            return;
+        }
+
         const formData = new FormData();
-        formData.append('image',file);
+        formData.append('name', name);
+        formData.append('second_name', second_name);
+        formData.append('experience', experience);
+        formData.append('image', file);
 
-        // вывести что в форм-дате
-        const formValues = Object.fromEntries(formData)
-        console.log(formValues) 
+        setLoading(true);
+        setError(null);
+        setSuccess(false);
 
-        // запрос можно использовать axios(установлен)
-        const res =await fetch(`/api/team`,{
-            method:'post',
-            body: formData,
-        });
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/team', {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                body: formData,
+            });
 
-        // сохранить ответ в json
-        const Onedata = await res.json()
+            if (!response.ok) {
+                throw new Error('Ошибка при загрузке файла');
+            }
 
-        // если данные с ошибкой
-        if(Onedata.errors){
-            setErrors(Onedata.errors);
+            const result = await response.json();
+            setSuccess(true);
+            console.log('Файл успешно загружен:', result);
+
+            // Очищаем форму
+            setName('');
+            setSecondName('');
+            setExperience('');
+            setFile(null);
+
+            // Обновляем список работников
+            await loaderTeam();
+        } catch (err) {
+            setError(err.message);
+            console.error('Ошибка:', err);
+        } finally {
+            setLoading(false);
         }
+    };
 
-        alert(Onedata.message);
-        // window.location.reload()
-    }
-
-    // список работников ..работает
     async function loaderTeam() {
-        const data = await getTeams();
-        setTeam(data);
+        try {
+            const data = await getTeams();
+            setTeam(data);
+        } catch (error) {
+            console.error('Ошибка при загрузке данных:', error);
+            setError('Не удалось загрузить данные');
+        }
     }
-    //удалить работника.. работает
-    async function deleteTeam (id) {
-        const res =await fetch(`/api/team/${id}`,{
-            method:'delete',
-            headers:{
-                Authorization: `Bearer ${token}`,
+
+    async function deleteTeam(id) {
+        try {
+            const res = await fetch(`/api/team/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+
+            if (!res.ok) {
+                throw new Error('Ошибка при удалении');
             }
-        });
 
-        // сохранить в json
-        const data = await res.json();
-
-        // если данные с ошибкой
-        if(data.errors){   
-            setErrors(data.errors || !res.ok);
-            console.log(errors);
-        }else{
+            const data = await res.json();
             alert(data.message);
-            // перезагрузить страницу что бы обновился список
-            window.location.reload();
+
+            // Обновляем состояние
+            setTeam(team.filter(item => item.id !== id));
+        } catch (error) {
+            console.error('Ошибка:', error);
+            setError('Не удалось удалить работника');
         }
     }
 
-    useEffect(()=>{
-        loaderTeam()
-    },[])
-
-    // обновить работника ...вроде работает 
-    async function handleUpdate (id) {
-        // e.preventDefault()
-        //обьект для update
-        const formData ={
-            name:'',
-            second_name:'',
-            experience:'',
-        }
-        // найти запись по id
-        team.map((item) => {
-            if (item.id === id) {
-                formData.name = item.name
-                formData.second_name = item.second_name
-                formData.experience = item.experience
+    async function handleUpdate(id) {
+        try {
+            const item = team.find(item => item.id === id);
+            if (!item) {
+                throw new Error('Работник не найден');
             }
-            return item;
-          })
-        //   console.log(formData)
-        // обновить запись в базе
-        const res =await fetch(`/api/team/${id}`,{
-            method:'put',
-            // роуты Team пока не защищены ..запросы без токена
-            // headers:{
-            //     Authorization:`Bearer ${token}`
-            // },
 
-            // парсить данные из типа форм-даты
-            body: JSON.stringify(formData),
-        });
+            const formData = {
+                name: item.name,
+                second_name: item.second_name,
+                experience: item.experience,
+            };
 
-        // сохранить в json
-        const data = await res.json();
-        // если данные с ошибкой
-        if(data.errors){
-            setErrors(data.errors);
+            const res = await fetch(`/api/team/${id}`, {
+                method: 'PUT',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!res.ok) {
+                throw new Error('Ошибка при обновлении');
+            }
+
+            const data = await res.json();
+            alert(data.message);
+
+            // Обновляем состояние
+            const updatedTeam = team.map(item =>
+                item.id === id ? { ...item, ...formData } : item
+            );
+            setTeam(updatedTeam);
+        } catch (error) {
+            console.error('Ошибка:', error);
+            setError('Не удалось обновить данные');
         }
-        alert(data.message);
-        window.location.reload()        
     }
-    // вывод (компонент TeanItem)
-    const out = team.map((item,index) => (
-        <TeamItem 
-        key={index} 
-        item={item}
-        editItem={editItem}
-        deleteTeam={deleteTeam}
-        handleUpdate={handleUpdate}
-        />
-        )
-    )
 
-    // для обновления работника
     function editItem(id, name, event) {
         setTeam(
-          team.map((item) => {
-            if (item.id === id) {
-              item[name] = event.target.value;
-            }
-            return item;
-          })
+            team.map((item) => {
+                if (item.id === id) {
+                    item[name] = event.target.value;
+                }
+                return item;
+            })
         );
     }
-    // console.log(team)
+
+    useEffect(() => {
+        loaderTeam();
+    }, []);
+
+    const out = team.map((item) => (
+        <TeamItem
+            key={item.id}
+            item={item}
+            editItem={editItem}
+            deleteTeam={deleteTeam}
+            handleUpdate={handleUpdate}
+        />
+    ));
+
     return (
         <>
-        <h2 className={style.title}>Добавить работника</h2>
-
-        {/* form---------------------------- */}
-
+            <h3 className={style.title}>Добавить работника</h3>
             <div className="employes">
-                <form onSubmit={addTeam} className={style.form}>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {success && <p style={{ color: 'green' }}>Файл успешно загружен!</p>}
+                <form onSubmit={handleSubmit} className={style.form}>
                     <label className={style.form__label}>
-                    {errors.email && <p className={style.form__error}>{ errors.email[0] }</p>}
-                        <span>Картинка* :</span> 
-                        <input type="file" 
-                        name="image" 
-                        placeholder="Проблема" 
-                        id="image"
-                        // на всякий случай
-                        onChange={handleChangeImage}
-                        className={style.form__input}/>
-                    </label>                   
-                    <button type="submit" className={style.form__btn}>Отправить</button>
-                </form>
+                        <span>Имя* :</span>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Имя"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className={style.form__input}
+                        />
+                    </label>
 
-                {/* employee list------------------------------------ */}
+                    <label className={style.form__label}>
+                        <span>Фамилия* :</span>
+                        <input
+                            type="text"
+                            name="second_name"
+                            placeholder="Фамилия"
+                            value={second_name}
+                            onChange={(e) => setSecondName(e.target.value)}
+                            className={style.form__input}
+                        />
+                    </label>
+
+                    <label className={style.form__label}>
+                        <span>Опыт работы* :</span>
+                        <input
+                            type="text"
+                            name="experience"
+                            placeholder="Опыт работы"
+                            value={experience}
+                            onChange={(e) => setExperience(e.target.value)}
+                            className={style.form__input}
+                        />
+                    </label>
+
+                    <label className={style.form__label}>
+                        <span>Загрузить Фото* :</span>
+                        <input
+                            type="file"
+                            onChange={handleFileChange}
+                            className={style.form__input}
+                            accept="image/*"
+                        />
+                    </label>
+
+                    <button type="submit" className={style.form__btn} disabled={loading}>
+                        {loading ? 'Загрузка...' : 'Отправить'}
+                    </button>
+                </form>
 
                 <h3 className={style.title}>Список работников</h3>
                 <table className={style.table}>
-                        <thead>
-                            <tr>
-                                <th>Имя</th>
-                                <th>Фамилия</th>
-                                <th>Опыт работы</th>
-                                <th>Дополнительно</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {out}
-                        </tbody>
+                    <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>Фамилия</th>
+                            <th>Опыт работы</th>
+                            <th>Дополнительно</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {out}
+                    </tbody>
                 </table>
             </div>
-            
-            <div className={style.modal}>
-                <Modal show={showModal} onCloseButtonClick={toggleShowModal} />
-            </div>
         </>
-    )
+    );
 }

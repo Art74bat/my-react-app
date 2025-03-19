@@ -1,0 +1,62 @@
+.head_wrapp{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.title{
+    padding: 32px;
+    text-align: center;
+    color: rgb(231, 116, 46);
+    font-family: 'Montserrat-Regular',sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.nav_list{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background: url('../public/images/Price_bg.png');
+}
+.nav_list__item_left{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding-right: 26px;
+    border-right: 1px solid white;
+}
+.nav_list__item_right{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding-left: 26px;
+    border-left: 1px solid white;
+}
+.nav_list__item_link{
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat-Medium',sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.nav_list__item_left:hover  .svg_left{
+    fill: rgb(231, 116, 46);
+}
+.nav_list__item_link:hover{
+    color: rgb(231, 116, 46);
+}
+.nav_list__item_right:hover  .svg_right{
+    fill: rgb(231, 116, 46);
+}

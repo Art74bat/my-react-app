@@ -1,4 +1,4 @@
-import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './App.css'
 import Home from './Pages/Home';
 import Blog from "./Pages/Blog";
@@ -17,13 +17,15 @@ import Info from "./Pages/components/admin/Info";
 import AdminBlog from "./Pages/components/admin/AdminBlog";
 import Message from "./Pages/components/admin/Message";
 import AdminReviews from "./Pages/components/admin/AdminReviews";
-import PriceList from "./Pages/components/PriceList";
+import FPriceList from "./Pages/components/FPriceList";
 import CorpPrice from "./Pages/components/CorpPrice";
 import AdminPrice from "./Pages/components/admin/AdminPrice";
+import Post from "./Pages/components/Post";
+import BlogLayout from "./Pages/components/BlogLayout";
+
 
 
 function App() {
-  const Location = useLocation();
   return (
     <>
 
@@ -36,10 +38,13 @@ function App() {
                 </Route>
                 <Route path="about" element={<About />} />
                 <Route path="price" element={<Price />} >
-                  <Route path="individual" element={<PriceList />}/>
+                  <Route path="individual" element={<FPriceList />}/>
                   <Route path="legal" element={<CorpPrice />} />
                 </Route>
-                <Route path="blog" element={<Blog/>} />
+                <Route path="blog" element={<BlogLayout/>} >
+                  <Route index element={<Blog/>}/>
+                  <Route path="posts/:id" element={<Post/>}/>
+                </Route>
                 <Route path="reviews" element={<Review/>} />
                 <Route path="contacts" element={<Contact/>} />
                 <Route path="login" element={<Login/>} >

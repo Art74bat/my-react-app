@@ -212,6 +212,7 @@
 .repair__wrapp{
     max-width: 1080px;
     margin: 0 auto;
+    padding-top: 48px;
 }
 .repair__title{
     color: rgb(255, 255, 255);
@@ -259,9 +260,9 @@
 /* payment--------------------------------------------- */
 
 
-.payment{
+/* .payment{
     
-}
+} */
 .payment__wrapp{
     max-width: 1080px;
     margin: 0 auto;
