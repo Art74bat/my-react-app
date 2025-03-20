@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import './App.css'
 import Home from './Pages/Home';
-import Blog from "./Pages/Blog";
+import Blog from "./Pages/components/Blog";
 import About from "./Pages/About";
 import Error404 from "./Pages/Error404";
 import AppLayout from "./Pages/AppLayout";
@@ -21,7 +21,9 @@ import FPriceList from "./Pages/components/FPriceList";
 import CorpPrice from "./Pages/components/CorpPrice";
 import AdminPrice from "./Pages/components/admin/AdminPrice";
 import Post from "./Pages/components/Post";
-import BlogLayout from "./Pages/components/BlogLayout";
+import BlogLayout from "./Pages/BlogLayout";
+import AddPost from "./Pages/components/admin/AddPost";
+import DelPost from "./Pages/components/admin/DelPost";
 
 
 
@@ -51,7 +53,10 @@ function App() {
                   <Route path="admin" element={<Admin />} />
                   <Route path="info" element={<Info />} />
                   <Route path="prices" element={<AdminPrice />} />
-                  <Route path="ablog" element={<AdminBlog />} />
+                  <Route path="ablog" element={<AdminBlog />} >
+                    <Route path="add" element={<AddPost/>}/>
+                    <Route path="delete" element={<DelPost/>}/>
+                  </Route>
                   <Route path="areviews" element={<AdminReviews />} />
                   <Route path="message" element={<Message />} />
                 </Route>

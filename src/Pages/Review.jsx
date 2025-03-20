@@ -17,16 +17,13 @@ export default function Review () {
         loaderReviews();
     },[])
     
-    // новый массив для вывода с "нормальной" датой
-    const myReviews = reviews.map((review)=>({
-        ...review,
-        created_at:review.created_at.split('T')[0]//оставить только дату
-    }))
-    // console.log(myReview);
-    // const dateTimeString = reviews.created_at;
-    // const dateOnly = dateTimeString.; // Разделить по пробелу и взять первую часть
-    // console.log(dateOnly); // "10.03.2025"
-    const out = myReviews.map((item)=>{
+    // // новый массив для вывода с "нормальной" датой
+    // const myReviews = reviews.map((review)=>({
+    //     ...review,
+    //     created_at:review.created_at.split('T')[0]//оставить только дату
+    // }))
+
+    const out = reviews.map((item)=>{
         return (
             <ul className={style.review_card} key={item.id}>
                 <li className={style.review_card__title}>{item.name} <span>{item.second_name}</span> <span className={style.review_date}>{item.created_at}</span></li>

@@ -6,6 +6,7 @@ function PostItem({ post }) {
     return (
         <div>
             <h2>{post.title}</h2>
+            {post.date}
             <div>
                 {post.images.map((image, index) => (
                     <img
@@ -49,6 +50,7 @@ export default function Post() {
             setLoading(false);
         }
     }
+    console.log(post)
 
     useEffect(() => {
         (async () => {
@@ -62,7 +64,6 @@ export default function Post() {
 
     return (
         <>
-            <h1>Информация о посте с ID: {id}</h1>
             <PostItem post={post} />
         </>
     );

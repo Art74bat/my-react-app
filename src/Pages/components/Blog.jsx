@@ -1,7 +1,5 @@
-import WriteUs from "./components/WriteUs";
-import MyCall from "./components/MyCall";
-import { Link, Outlet } from "react-router-dom";
-import { getPosts } from "./getData";
+import { Link} from "react-router-dom";
+import { getPosts } from "../getData";
 import { useEffect, useState } from "react";
 
 function PostItem({ post }) {
@@ -52,9 +50,6 @@ export default function Blog() {
             <div>
                 {out}
             </div>
-            {/* <Outlet /> */}
-            <WriteUs />
-            <MyCall />
         </>
     );
 }

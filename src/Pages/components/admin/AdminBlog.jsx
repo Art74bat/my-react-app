@@ -1,12 +1,17 @@
-// создать пост в блоге на сайте
+import { Link,Outlet } from "react-router-dom";
 
-import style from "../../css/Admin.module.css";
 
-export default function AdminBlog () {
+export default function AdminBlog() {
 
-    return (
+    
+
+    return(
         <>
-            <h2 className={style.title}>Блог</h2>
+            <nav>
+                <Link to="add">Добавить</Link>
+                <Link to="delete">Удалить</Link>
+            </nav>
+            <Outlet/>
         </>
     )
 }
