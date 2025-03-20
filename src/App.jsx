@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import './App.css'
+
 import Home from './Pages/Home';
 import Blog from "./Pages/components/Blog";
 import About from "./Pages/About";
@@ -8,9 +8,7 @@ import AppLayout from "./Pages/AppLayout";
 import Review from "./Pages/Review";
 import Price from "./Pages/Price";
 import Contact from "./Pages/Contact";
-import Services from "./Pages/Services";
-import Devices from './Pages/components/Devices';
-import Manufacture from "./Pages/components/Manufacture";
+import Services from "./Pages/Computers";
 import Login from "./Pages/Login";
 import Admin from './Pages/components/admin/Admin';
 import Info from "./Pages/components/admin/Info";
@@ -25,7 +23,9 @@ import BlogLayout from "./Pages/BlogLayout";
 import AddPost from "./Pages/components/admin/AddPost";
 import DelPost from "./Pages/components/admin/DelPost";
 import AddPartPost from "./Pages/components/admin/AddPartPost";
-
+import './App.css'
+import Laptop from "./Pages/components/Laptop";
+import Computers from "./Pages/Computers";
 
 
 function App() {
@@ -35,10 +35,8 @@ function App() {
         <Routes>
             <Route path="/" element={<AppLayout />}>
                 <Route index element={<Home />} />
-                <Route path="services" element={<Services />}>
-                    <Route path="devices" element={<Devices />} />
-                    <Route path="reviews" element={<Manufacture />} />
-                </Route>
+                <Route path="comp" element={<Computers />}/>  
+                <Route path="laptop" element={<Laptop />}/>  
                 <Route path="about" element={<About />} />
                 <Route path="price" element={<Price />} >
                   <Route path="individual" element={<FPriceList />}/>

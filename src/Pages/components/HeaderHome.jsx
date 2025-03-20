@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "../css/HeaderHome.module.css";
+import { useState } from "react";
 
 export default function HeaderHome () {
+    const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+
+    const toggleServicesDropdown = () => {
+        setIsServicesDropdownOpen(!isServicesDropdownOpen);
+    };
     return (
         <header className={styles.header}>
         <div className={styles.header_wrapp}>
@@ -33,45 +39,86 @@ export default function HeaderHome () {
                         </li>
                     </ul>
                 </div>
-                <nav className={styles.navigate}>
-                    <ul className={styles.navigate__list}>
-                        <li className={styles.navigate__item}>
-                        <Link to="/" className={styles.navigate__item_link}>Главная</Link>
-                        </li>
-                        <li className={styles.navigate__item}>
-                        <Link to="/about" className={styles.navigate__item_link}>О нас</Link>
-                        </li>
-                        <li className={styles.navigate__item}>
-                            <div className={styles.dropdown}>
-                                <span className={styles.navigate__item_btn}>Услуги</span>
-                                {/* <div className="dropdown__list">
-                                    <a className="dropdown__item" href="#">Ремонт компьютеров</a>
-                                    <a className="dropdown__item" href="#">Ремонт ноутбуков</a>
-                                    <a className="dropdown__item" href="#">Ремонт моноблоков</a>
-                                    <a className="dropdown__item" href="#">Ремонт компьютеров</a>
-                                    <a className="dropdown__item" href="#">Ремонт техники Apple</a>
-                                    <a className="dropdown__item" href="#">Сборка и апгрейд компютеров</a>
-                                    <a className="dropdown__item" href="#">Удаление вирусов</a>
-                                    <a className="dropdown__item" href="#">Настройка интернета</a>
-                                    <a className="dropdown__item" href="#">Корпоративным клиентам</a>
-                                </div> */}
+                <nav>
+            <ul className={styles.navigate__list}>
+                <li className={styles.navigate__item}>
+                    <NavLink to="/" >
+                        Главная
+                    </NavLink>
+                </li>
+                <li className={styles.navigate__item}>
+                    <NavLink to="/about" >
+                        О нас
+                    </NavLink>
+                </li>
+                <li className={styles.navigate__item}>
+                    <div className={styles.dropdown}>
+                    <div
+                        onClick={toggleServicesDropdown}
+                        className={`${styles.navigate__item_link} ${
+                        isServicesDropdownOpen ? styles.active : ""
+                    }`}
+                    >
+                            Услуги
+                    </div>
+                 
+                        {isServicesDropdownOpen && (
+                            <div className={styles.dropdown__content}>
+                                <Link to="comp" className={styles.dropdown__link}>
+                                    Ремонт компьютеров
+                                </Link>
+                                <Link to="laptop" className={styles.dropdown__link}>
+                                    Ремонт ноутбуков
+                                </Link>
+                                {/* <Link to="/services/service" className={styles.dropdown__link}>
+                                    Ремонт моноблоков
+                                </Link>
+                                <Link to="/services/service" className={styles.dropdown__link}>
+                                    Ремонт техники Apple
+                                </Link>
+                                <Link to="/services/service" className={styles.dropdown__link}>
+                                    Установка ОС и программ
+                                </Link>
+                                <Link to="/services/service" className={styles.dropdown__link}>
+                                    Удаление вирусов
+                                </Link>
+                                <Link to="/services/service" className={styles.dropdown__link}>
+                                    Настройка интернета
+                                </Link>
+                                <Link to="/services/service" className={styles.dropdown__link}>
+                                    Корпоративным клиентам
+                                </Link> */}
                             </div>
-                        </li>
-                        <li className={styles.navigate__item}>
-                        <Link to="/price" className={styles.navigate__item_link}>Прайс-Лист</Link>
-                        </li>
-                        <li className={styles.navigate__item}>
-                        <Link to="/reviews" className={styles.navigate__item_link}>Отзывы</Link>
-                        </li>
-                        <li className={styles.navigate__item}>
-                        <Link to="/blog" className={styles.navigate__item_link}>Блог</Link>
-                        </li>
-                        <li className={styles.navigate__item}>
-                        <Link to="/contacts" className={styles.navigate__item_link}>Контакты</Link>
-                        </li>
-                        <li><Link to="/login" className={styles.navigate__item_link}>Login</Link></li>
-                    </ul>
-                </nav>
+                        )}
+                    </div>
+                </li>
+                <li className={styles.navigate__item}>
+                    <NavLink to="/price" >
+                        Прайс-Лист
+                    </NavLink>
+                </li>
+                <li className={styles.navigate__item}>
+                    <NavLink to="/reviews" >
+                        Отзывы
+                    </NavLink>
+                </li>
+                <li className={styles.navigate__item}>
+                    <NavLink to="/blog" >
+                        Блог
+                    </NavLink>
+                </li>
+                <li className={styles.navigate__item}>
+                    <NavLink to="/contacts" >
+                        Контакты
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/login" >
+                        Login
+                    </NavLink>
+                </li>
+            </ul>
+        </nav>
             </div>
             </div>
             <div className={styles.header_wrapp__bottom}>

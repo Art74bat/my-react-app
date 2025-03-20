@@ -29,7 +29,7 @@ export default function MyCall () {
 
     return (
         <>
-        <h2>Заказать звонок</h2>
+        <h2 className={style.title}>Заказать звонок</h2>
             <form onSubmit={addCalls} className={style.form}>
             <label className={style.form__label}>
                 {errors.password && <p className={style.form__error}>{ errors.password[0] }</p>}
@@ -48,7 +48,7 @@ export default function MyCall () {
                     <span>Телефон* :</span> 
                     <input type="phone" 
                     name="phone" 
-                    placeholder="Email" 
+                    placeholder="Телефон" 
                     id="phone"
                     value={formData.phone} 
                     onChange={(e)=>setFormData({...formData, phone: e.target.value})}

@@ -16,7 +16,7 @@ export default function OurTeam () {
     useEffect(()=>{
         loaderTeams();
     },[])
-    console.log(teams);
+    // console.log(teams);
     const out = teams.map((item) => (
             <div key={item.id} className={style.card_team}>
                 <picture className={style.card_team__pic}>

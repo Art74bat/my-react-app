@@ -81,7 +81,7 @@ export default function MasterCall () {
                 </label> 
                 <div className={styles.section_form__wrapp}>
                     <input className={styles.section_form__checkbox} type="checkbox" id="checkbox"/>
-                    <label className={styles.section_form__label_checkbox} for="checkbox">Даю согласие на обработку моих персональных данных и принимаю <a className={styles.section_form__checkbox_link} href="#">политику конфиденциальности</a></label>
+                    <label className={styles.section_form__label_checkbox} htmlFor="checkbox">Даю согласие на обработку моих персональных данных и принимаю <a className={styles.section_form__checkbox_link} href="#">политику конфиденциальности</a></label>
                 </div>
                         
                 <button type="submit" className={styles.submit_btn}>Отправить</button>

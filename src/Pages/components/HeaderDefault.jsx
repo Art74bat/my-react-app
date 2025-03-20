@@ -1,7 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "../css/Header.module.css";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeaderDefault () {
+    const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
+    const toggleServicesDropdown = () => {
+        setIsServicesDropdownOpen(!isServicesDropdownOpen);
+    };
+
+    // для обработки клика вне dropdown 
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsServicesDropdownOpen(false);
+        }
+    };
+
+    // перехватить клик..
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
         <header className={styles.header}>
         <div className={styles.header_wrapp}>
@@ -36,40 +58,60 @@ export default function HeaderDefault () {
                 <nav className={styles.navigate}>
                     <ul className={styles.navigate__list}>
                         <li className={styles.navigate__item}>
-                        <Link to="/" className={styles.navigate__item_link}>Главная</Link>
+                        <NavLink to="/" className={styles.navigate__item_link}>Главная</NavLink>
                         </li>
                         <li className={styles.navigate__item}>
-                        <Link to="/about" className={styles.navigate__item_link}>О нас</Link>
+                        <NavLink to="/about">О нас</NavLink>
                         </li>
-                        <li className={styles.navigate__item}>
+                        <li className={styles.navigate__item} ref={dropdownRef}>
                             <div className={styles.dropdown}>
-                                <span className={styles.navigate__item_btn}>Услуги</span>
-                                {/* <div className="dropdown__list">
-                                    <a className="dropdown__item" href="#">Ремонт компьютеров</a>
-                                    <a className="dropdown__item" href="#">Ремонт ноутбуков</a>
-                                    <a className="dropdown__item" href="#">Ремонт моноблоков</a>
-                                    <a className="dropdown__item" href="#">Ремонт компьютеров</a>
-                                    <a className="dropdown__item" href="#">Ремонт техники Apple</a>
-                                    <a className="dropdown__item" href="#">Сборка и апгрейд компютеров</a>
-                                    <a className="dropdown__item" href="#">Удаление вирусов</a>
-                                    <a className="dropdown__item" href="#">Настройка интернета</a>
-                                    <a className="dropdown__item" href="#">Корпоративным клиентам</a>
-                                </div> */}
+                                    <NavLink to="#" onClick={toggleServicesDropdown}>
+                                        Услуги
+                                    </NavLink>
+                         
+                                {isServicesDropdownOpen && (
+                                    <div className={styles.dropdown__content}>
+                                        <Link to="comp" className={styles.dropdown__link}>
+                                            Ремонт компьютеров
+                                        </Link>
+                                        <Link to="laptop" className={styles.dropdown__link}>
+                                            Ремонт ноутбуков
+                                        </Link>
+                                        {/* <Link to="/services/service3" className={styles.dropdown__link}>
+                                            Ремонт моноблоков
+                                        </Link>
+                                        <Link to="/services/service3" className={styles.dropdown__link}>
+                                            Ремонт техники Apple
+                                        </Link>
+                                        <Link to="/services/service3" className={styles.dropdown__link}>
+                                            Установка ОС и программ
+                                        </Link>
+                                        <Link to="/services/service3" className={styles.dropdown__link}>
+                                            Удаление вирусов
+                                        </Link>
+                                        <Link to="/services/service3" className={styles.dropdown__link}>
+                                            Настройка интернета
+                                        </Link>
+                                        <Link to="/services/service3" className={styles.dropdown__link}>
+                                            Корпоративным клиентам
+                                        </Link> */}
+                                    </div>
+                                )}
                             </div>
                         </li>
                         <li className={styles.navigate__item}>
-                        <Link to="/price" className={styles.navigate__item_link}>Прайс лист</Link>
+                        <NavLink to="/price" >Прайс лист</NavLink>
                         </li>
                         <li className={styles.navigate__item}>
-                        <Link to="/reviews" className={styles.navigate__item_link}>Отзывы</Link>
+                        <NavLink to="/reviews">Отзывы</NavLink>
                         </li>
                         <li className={styles.navigate__item}>
-                        <Link to="/blog" className={styles.navigate__item_link}>Блог</Link>
+                        <NavLink to="/blog" >Блог</NavLink>
                         </li>
                         <li className={styles.navigate__item}>
-                        <Link to="/contacts" className={styles.navigate__item_link}>Контакты</Link>
+                        <NavLink to="/contacts">Контакты</NavLink>
                         </li>
-                        <li><Link to="/login" className={styles.navigate__item_link}>Login</Link></li>
+                        <li><NavLink to="/login">Login</NavLink></li>
                     </ul>
                 </nav>
             </div>

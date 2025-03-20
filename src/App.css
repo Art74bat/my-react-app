@@ -3,13 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-  
-:root {
+a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
+/* :root {
     --color-bg: #2C2C32;
-    --color-active: #48a878;
-}
+    --color-active:  #e7742e;
+    --color-current:  white;
+} */
 
-.active {
-    color: var(--color-active);
-    cursor: default;
-}
+ .active {
+    color: #e7742e;
+    cursor: pointer;
+} 

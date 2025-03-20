@@ -272,16 +272,19 @@
     height: 3px;
     background-color: #e7742e;
   }
-  .call_master .section_form {
+
+
+
+.section_form {
     max-width: 528px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .call_master .section_form__wrapp {
+  .section_form__wrapp {
     border: 1px solid rgb(255, 255, 255);
   }
-  .call_master .section_form__label {
+ .section_form__label {
     margin-bottom: 12px;
     color: rgb(11, 20, 39);
     font-family: "Montserrat-Regular", sans-serif;
@@ -290,7 +293,7 @@
     line-height: 140%;
     text-align: left;
   }
-  .call_master .section_form__select {
+.section_form__select {
     display: block;
     color: rgb(180, 180, 180);
     font-family: "Montserrat-Medium", sans-serif;
@@ -314,13 +317,13 @@
     background-position: right 0.7em top 50%, 0 0;
     background-size: 0.65em auto, 100%;
   }
-  .call_master .section_form__select::-ms-expand {
+ .section_form__select::-ms-expand {
     display: none;
   }
-  .call_master .section_form__select:hover {
+ .section_form__select:hover {
     border-color: #888;
   }
-  .call_master .section_form__select:focus {
+.section_form__select:focus {
     border-color: #aaa;
     box-shadow: 0 0 1px 2px rgba(59, 153, 252, 0.7);
     color: #222;
@@ -469,6 +472,11 @@
     background: radial-gradient(50% 50% at 50% 50%, rgb(247, 167, 12), rgb(231, 116, 46) 100%);
     cursor: pointer;
   }
+
+
+
+
+  
   .advertisement_wrapp {
     max-width: 1080px;
     display: flex;
