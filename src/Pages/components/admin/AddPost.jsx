@@ -1,13 +1,13 @@
-// создать пост в блоге на сайте
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../../Context/AppContext";
 
 export default function AddPostForm() {
-    const {token} = useContext(AppContext);
+    const { token } = useContext(AppContext);
     const [title, setTitle] = useState("");
     const [subTitle, setSubTitle] = useState("");
     const [body, setBody] = useState("");
     const [image, setImage] = useState(null);
+    const [isImportant, setIsImportant] = useState(false); // Состояние для checkbox
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
@@ -33,6 +33,7 @@ export default function AddPostForm() {
         formData.append("sub_title", subTitle);
         formData.append("body", body);
         formData.append("image", image);
+        formData.append("is_important", isImportant); // Добавляем значение checkbox
 
         setLoading(true);
         setError(null);
@@ -60,6 +61,7 @@ export default function AddPostForm() {
             setSubTitle("");
             setBody("");
             setImage(null);
+            setIsImportant(false); // Сбрасываем checkbox
         } catch (err) {
             setError(err.message);
             console.error("Ошибка:", err);
@@ -113,6 +115,16 @@ export default function AddPostForm() {
                         onChange={handleImageChange}
                         accept="image/*"
                         required
+                    />
+                </label>
+
+                {/* Checkbox для важного поста */}
+                <label>
+                    Важный пост:
+                    <input
+                        type="checkbox"
+                        checked={isImportant}
+                        onChange={(e) => setIsImportant(e.target.checked)}
                     />
                 </label>
 

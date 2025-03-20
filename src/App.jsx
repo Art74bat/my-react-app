@@ -24,6 +24,7 @@ import Post from "./Pages/components/Post";
 import BlogLayout from "./Pages/BlogLayout";
 import AddPost from "./Pages/components/admin/AddPost";
 import DelPost from "./Pages/components/admin/DelPost";
+import AddPartPost from "./Pages/components/admin/AddPartPost";
 
 
 
@@ -56,6 +57,7 @@ function App() {
                   <Route path="ablog" element={<AdminBlog />} >
                     <Route path="add" element={<AddPost/>}/>
                     <Route path="delete" element={<DelPost/>}/>
+                    <Route path="part" element={<AddPartPost/>}/>
                   </Route>
                   <Route path="areviews" element={<AdminReviews />} />
                   <Route path="message" element={<Message />} />
