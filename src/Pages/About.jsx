@@ -1,6 +1,5 @@
 import OurTeam from "./components/OurTeam"
 import style from "./css/About.module.css"
-import Review from './Review';
 import CaruselReviews from './components/CaruselReviews';
 
 

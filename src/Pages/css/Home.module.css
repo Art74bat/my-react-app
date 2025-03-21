@@ -472,7 +472,9 @@
     background: radial-gradient(50% 50% at 50% 50%, rgb(247, 167, 12), rgb(231, 116, 46) 100%);
     cursor: pointer;
   }
-
+.section_form__checkbox{
+  transform: scale(2);
+}
 
 
 

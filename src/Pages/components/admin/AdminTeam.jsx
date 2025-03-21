@@ -38,7 +38,7 @@ export default function AdminTeam() {
         setSuccess(false);
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/team', {
+            const response = await fetch('https://artbatochir.ru/api/team', {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,

@@ -1,13 +1,13 @@
 import { Link} from "react-router-dom";
 import { getPosts } from "../getData";
 import { useEffect, useState } from "react";
-
+import style from "../css/Blog.module.css"
 function PostItem({ post }) {
     return (
-        <div>
-            <p>{post.id} {post.title}</p>
-            <p>{post.images}</p>
-            <Link to={`posts/${post.id}`}>Post</Link>
+        <div className={style.card}>
+            {/* <p>{post.images}</p> */}
+            <img className={style.img} src={post.images} alt="picture" />
+            <Link className={style.link} to={`posts/${post.id}`}>{post.title}</Link>
         </div>
     );
 }
@@ -45,9 +45,9 @@ export default function Blog() {
 
     return (
         <>
-            <h1>Blog</h1>
+            <h1 className={style.title}>Блог</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
-            <div>
+            <div className={style.container}>
                 {out}
             </div>
         </>

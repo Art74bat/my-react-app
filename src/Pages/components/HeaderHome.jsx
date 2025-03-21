@@ -42,14 +42,14 @@ export default function HeaderHome () {
                 <nav>
             <ul className={styles.navigate__list}>
                 <li className={styles.navigate__item}>
-                    <NavLink to="/" >
+                    <Link className={styles.navigate__item_link} to="/" >
                         Главная
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className={styles.navigate__item}>
-                    <NavLink to="/about" >
+                    <Link className={styles.navigate__item_link} to="/about" >
                         О нас
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className={styles.navigate__item}>
                     <div className={styles.dropdown}>
@@ -93,29 +93,29 @@ export default function HeaderHome () {
                     </div>
                 </li>
                 <li className={styles.navigate__item}>
-                    <NavLink to="/price" >
+                    <Link className={styles.navigate__item_link} to="/price" >
                         Прайс-Лист
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className={styles.navigate__item}>
-                    <NavLink to="/reviews" >
+                    <Link className={styles.navigate__item_link} to="/reviews" >
                         Отзывы
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className={styles.navigate__item}>
-                    <NavLink to="/blog" >
+                    <Link className={styles.navigate__item_link} to="/blog" >
                         Блог
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className={styles.navigate__item}>
-                    <NavLink to="/contacts" >
+                    <Link className={styles.navigate__item_link} to="/contacts" >
                         Контакты
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
-                    <NavLink to="/login" >
+                    <Link className={styles.navigate__item_link} to="/login" >
                         Login
-                    </NavLink>
+                    </Link>
                 </li>
             </ul>
         </nav>

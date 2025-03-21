@@ -1,16 +1,17 @@
 // создать пост в блоге на сайте
 
 import { useContext, useEffect, useState } from "react";
-import style from "../../css/Admin.module.css";
+// import style from "../../css/Admin.module.css";
 import { getPosts } from "../../getData";
 import { AppContext } from "../../../Context/AppContext";
+import style from "../../css/PostAdminForm.module.css";
 
 function PostItem({ post,deletePost }) {
     return (
-        <div>
-            <p>{post.id} {post.title}</p>
-            <p>{post.images}</p>
-            <button onClick={()=>deletePost(post.id)}>Удалить</button>
+        <div className={style.block}>
+            <p className={style.sub_title}>{post.id} {post.title}</p>
+            <img className={style.image} src={post.images} alt="picture" />
+            <button className={style.form__btn} onClick={()=>deletePost(post.id)}>Удалить</button>
         </div>
     );
 }
@@ -69,7 +70,7 @@ export default function DelPost () {
     const out = posts.map((item) => <PostItem key={item.id} post={item} deletePost={deletePost} />);
 
     if (loading) return <p>Загрузка...</p>;
-    if (posts.length === 0 && !loading) return <p>Постов нет.</p>;
+    if (posts.length === 0 && !loading) return <p className={style.message}>Постов нет.</p>;
 
     return (
         <>

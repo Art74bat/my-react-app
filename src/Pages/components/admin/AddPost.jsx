@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../../Context/AppContext";
+// import style from "../../css/Register.module.css";
+import style from "../../css/PostAdminForm.module.css";
 
 export default function AddPostForm() {
     const { token } = useContext(AppContext);
@@ -7,7 +9,7 @@ export default function AddPostForm() {
     const [subTitle, setSubTitle] = useState("");
     const [body, setBody] = useState("");
     const [image, setImage] = useState(null);
-    const [isImportant, setIsImportant] = useState(false); // Состояние для checkbox
+    // const [isImportant, setIsImportant] = useState(false); // Состояние для checkbox
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
@@ -33,14 +35,14 @@ export default function AddPostForm() {
         formData.append("sub_title", subTitle);
         formData.append("body", body);
         formData.append("image", image);
-        formData.append("is_important", isImportant); // Добавляем значение checkbox
+        // formData.append("is_important", isImportant); // Добавляем значение checkbox
 
         setLoading(true);
         setError(null);
         setSuccess(false);
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/posts", {
+            const response = await fetch("https://artbatochir.ru/api/posts", {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -61,7 +63,7 @@ export default function AddPostForm() {
             setSubTitle("");
             setBody("");
             setImage(null);
-            setIsImportant(false); // Сбрасываем checkbox
+            // setIsImportant(false); // Сбрасываем checkbox
         } catch (err) {
             setError(err.message);
             console.error("Ошибка:", err);
@@ -72,14 +74,14 @@ export default function AddPostForm() {
 
     return (
         <div>
-            <h1>Добавить пост</h1>
+            <h1 className={style.title}>Добавить пост</h1>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>Пост успешно добавлен!</p>}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={style.form}>
                 {/* Поле для заголовка */}
-                <label>
+                <label className={style.form__label}>
                     Заголовок*:
-                    <input
+                    <input   className={style.form__input}
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
@@ -88,9 +90,9 @@ export default function AddPostForm() {
                 </label>
 
                 {/* Поле для подзаголовка */}
-                <label>
+                <label className={style.form__label}>
                     Подзаголовок:
-                    <input
+                    <input className={style.form__input}
                         type="text"
                         value={subTitle}
                         onChange={(e) => setSubTitle(e.target.value)}
@@ -98,9 +100,12 @@ export default function AddPostForm() {
                 </label>
 
                 {/* Поле для основного текста */}
-                <label>
+                <label className={style.form__label}>
                     Текст поста*:
                     <textarea
+                        className={style.form__input}
+                        rows="4"
+                        cols="50"
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                         required
@@ -108,9 +113,9 @@ export default function AddPostForm() {
                 </label>
 
                 {/* Поле для загрузки изображения */}
-                <label>
+                <label className={style.form__label}>
                     Изображение*:
-                    <input
+                    <input className={style.form__input}
                         type="file"
                         onChange={handleImageChange}
                         accept="image/*"
@@ -119,17 +124,17 @@ export default function AddPostForm() {
                 </label>
 
                 {/* Checkbox для важного поста */}
-                <label>
+                {/* <label>
                     Важный пост:
                     <input
                         type="checkbox"
                         checked={isImportant}
                         onChange={(e) => setIsImportant(e.target.checked)}
                     />
-                </label>
+                </label> */}
 
                 {/* Кнопка отправки формы */}
-                <button type="submit" disabled={loading}>
+                <button type="submit" disabled={loading} className={style.form__btn}>
                     {loading ? "Отправка..." : "Добавить пост"}
                 </button>
             </form>

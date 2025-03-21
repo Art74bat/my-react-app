@@ -8,8 +8,18 @@ export default function BlogLayout () {
         <>
         <Outlet/>
         <section className={style.section_wrapp}>
-            <WriteUs />
+        <h2 className={style.title}>Возникли вопросы?</h2>
+        <h3 className={style.sub_title}>Мы с радостью ответим на любой вопрос о вашей технике. Позвоните или напишите нам.</h3>
+            <div className={style.wrapp}>
+               
+            <div className={style.element_wrapp}>
             <MyCall />
+            </div>
+            <div className={style.element_wrapp}>
+            <WriteUs />
+            </div>
+            
+            </div>
         </section>
         </>
     )

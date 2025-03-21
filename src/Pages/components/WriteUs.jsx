@@ -68,7 +68,7 @@ export default function WriteUs () {
                     className={style.form__area}></textarea>
                 </label>
                 <label className={style.checkbox_label}>
-                    <input type="checkbox" name="policy"/> <span className={style.checkbox_text}>Даю согласие на обработку моих персональных данных и принимаю <a className={style.link} href="#">политику конфиденциальности</a></span>
+                    <input type="checkbox" className={style.checkbox} name="policy"/> <span className={style.checkbox_text}>Даю согласие на обработку моих персональных данных и принимаю <a className={style.link} href="#">политику конфиденциальности</a></span>
                 </label>
                 <button type="submit" className={style.form__btn}>Отправить</button>
             </form>

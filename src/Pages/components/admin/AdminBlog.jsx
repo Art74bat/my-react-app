@@ -1,5 +1,5 @@
 import { Link,Outlet } from "react-router-dom";
-
+import style from "../../css/AdminBlog.module.css"
 
 export default function AdminBlog() {
 
@@ -7,10 +7,10 @@ export default function AdminBlog() {
 
     return(
         <>
-            <nav>
-                <Link to="add">Добавить пост</Link>
-                <Link to="delete">Удалить пост</Link>
-                <Link to="part">Добавить раздел в существующий пост</Link>
+            <nav className={style.nav}>
+                <Link className={style.link} to="add">Добавить пост</Link>
+                <Link className={style.link} to="delete">Удалить пост</Link>
+                <Link className={style.link} to="part">Добавить раздел в существующий пост</Link>
             </nav>
             <Outlet/>
         </>

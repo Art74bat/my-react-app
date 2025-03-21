@@ -34,7 +34,7 @@ export default function OurTeam () {
                 <h2 className={style.our_team__title}>наша команда</h2>
                 <p className={style.our_team__description}>В команде мастеров компьютерного сервиса Geko объединились профессионалы, которые хорошо знают и любят свое дело. Огромный опыт, современная техническая база и коллективный потенциал позволяют нам оперативно и качественно решать любые проблемы, возникшие с вашей компьютерной техникой.</p>
                 <div className={style.our_team__card_wrapp}>
-                    <div className={style.card_team}>
+                    {/* <div className={style.card_team}>
                         <picture className={style.card_team__pic}>
                         <img className={style.card_team__img} src='../public/images/test.jpg' alt='Picture'/>
                         </picture>	
@@ -47,7 +47,7 @@ export default function OurTeam () {
                         </picture>	
                         <h2 className={style.card_team__title}>Сергей Александров</h2>
                         <p className={style.card_team__descript}>Опыт работы – 10 лет</p>
-                    </div>
+                    </div> */}
                     {out}
                 </div>
             </section>

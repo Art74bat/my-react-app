@@ -78,7 +78,7 @@ export default function AdminPrice () {
         return acc;
     }, {});
 
-    // сождать новую запись
+    // создать новую запись
     async function createItem (item,token) {
             let route = item[0].route
                 // Объединяем данные формы и дополнительные данные

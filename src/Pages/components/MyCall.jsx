@@ -54,7 +54,7 @@ export default function MyCall () {
                     onChange={(e)=>setFormData({...formData, phone: e.target.value})}
                     className={style.form__input}/>
                 </label>                   
-                <button type="submit" className={style.form__btn}>Отправить</button>
+                <button type="submit" className={style.form__btn}>Заказать звонок</button>
             </form>
         </>
     )

@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../css/Header.module.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -58,16 +58,16 @@ export default function HeaderDefault () {
                 <nav className={styles.navigate}>
                     <ul className={styles.navigate__list}>
                         <li className={styles.navigate__item}>
-                        <NavLink to="/" className={styles.navigate__item_link}>Главная</NavLink>
+                        <Link className={styles.navigate__item_link} to="/" className={styles.navigate__item_link}>Главная</Link>
                         </li>
                         <li className={styles.navigate__item}>
-                        <NavLink to="/about">О нас</NavLink>
+                        <Link className={styles.navigate__item_link} to="/about">О нас</Link>
                         </li>
                         <li className={styles.navigate__item} ref={dropdownRef}>
                             <div className={styles.dropdown}>
-                                    <NavLink to="#" onClick={toggleServicesDropdown}>
+                                    <Link className={styles.navigate__item_link} to="#" onClick={toggleServicesDropdown}>
                                         Услуги
-                                    </NavLink>
+                                    </Link>
                          
                                 {isServicesDropdownOpen && (
                                     <div className={styles.dropdown__content}>
@@ -100,18 +100,18 @@ export default function HeaderDefault () {
                             </div>
                         </li>
                         <li className={styles.navigate__item}>
-                        <NavLink to="/price" >Прайс лист</NavLink>
+                        <Link className={styles.navigate__item_link} to="/price" >Прайс лист</Link>
                         </li>
                         <li className={styles.navigate__item}>
-                        <NavLink to="/reviews">Отзывы</NavLink>
+                        <Link className={styles.navigate__item_link} to="/reviews">Отзывы</Link>
                         </li>
                         <li className={styles.navigate__item}>
-                        <NavLink to="/blog" >Блог</NavLink>
+                        <Link className={styles.navigate__item_link} to="/blog" >Блог</Link>
                         </li>
                         <li className={styles.navigate__item}>
-                        <NavLink to="/contacts">Контакты</NavLink>
+                        <Link className={styles.navigate__item_link} to="/contacts">Контакты</Link>
                         </li>
-                        <li><NavLink to="/login">Login</NavLink></li>
+                        <li><Link className={styles.navigate__item_link} to="/login">Login</Link></li>
                     </ul>
                 </nav>
             </div>

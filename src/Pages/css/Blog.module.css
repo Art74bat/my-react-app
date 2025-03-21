@@ -1,0 +1,41 @@
+.container{
+    margin: 0 auto;
+    max-width: 1080px;
+}
+.title{
+    width: 150px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 55px;
+    padding: 12px;
+    color: rgb(11, 20, 39);
+    font-family: "Montserrat-Medium",sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e7742e;
+    }
+.card{
+    max-width: 344px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: 20px;
+}
+.img{
+    width: 316px;
+    height: 258px;
+    object-fit:cover;
+}
+.link{
+    color: rgb(11, 20, 39);
+    font-family: 'Montserrat_medium',sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%;
+
+    text-align: center;
+    text-transform: uppercase;
+}

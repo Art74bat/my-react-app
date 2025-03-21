@@ -1,4 +1,5 @@
 import WriteUs from "./components/WriteUs";
+
 import style from "./css/Contact.module.css"
 
 export default function Contact () {
@@ -7,6 +8,7 @@ export default function Contact () {
             <h2 className={style.title}>Контакты</h2>
             <div className={style.wrapp}>
                 <img className={style.contacts_map} src="../public/images/contacts/Map_contacts.png" alt="picture" />
+                {/* <YandexMap/> */}
                 <div className={style.contacts_wrapp}>
                     <ul className={style.contacts_list}>
                     <li className={style.contacts_item}>

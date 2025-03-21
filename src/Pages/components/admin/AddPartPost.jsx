@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import style from "../../css/Admin.module.css";
+import style from "../../css/PostAdminForm.module.css";
 import { getPosts } from "../../getData";
 import { AppContext } from "../../../Context/AppContext";
 
 function PostItem({ post, addPart }) {
     return (
-        <div>
-            <p>{post.id} {post.title}</p>
-            <p>{post.images}</p>
-            <button onClick={() => addPart(post.id)}>Добавить Раздел</button>
+        <div className={style.block}>
+            <p className={style.sub_title}>{post.id} {post.title}</p>
+             <img className={style.image} src={post.images} alt="picture" />
+            <button className={style.form__btn} onClick={() => addPart(post.id)}>Добавить Раздел</button>
         </div>
     );
 }
@@ -105,10 +105,11 @@ export default function DelPost() {
             {selectedPostId && (
                 <div>
                     <h3>Добавить раздел к посту {selectedPostId}</h3>
-                    <form onSubmit={(e) => e.preventDefault()}>
-                        <label>
+                    <form className={style.form} onSubmit={(e) => e.preventDefault()}>
+                        <label className={style.form__label}>
                             Заголовок раздела:
                             <input
+                            className={style.form__input}
                                 type="text"
                                 value={partTitle}
                                 onChange={(e) => setPartTitle(e.target.value)}
@@ -118,12 +119,15 @@ export default function DelPost() {
                         <label>
                             Текст раздела:
                             <textarea
+                                className={style.form__input}
+                                 rows="4"
+                                cols="50"
                                 value={partBody}
                                 onChange={(e) => setPartBody(e.target.value)}
                                 required
                             />
                         </label>
-                        <button onClick={handleAddPart}>Добавить раздел</button>
+                        <button className={style.form__btn} onClick={handleAddPart}>Добавить раздел</button>
                     </form>
                 </div>
             )}

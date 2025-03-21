@@ -9,6 +9,7 @@ export default function ReviewsForm () {
         name:'',
         email:'',
         review:'',
+        policy:true,
     })
 
     async function addReview (e) {

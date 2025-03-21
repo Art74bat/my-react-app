@@ -115,7 +115,7 @@
     text-transform: uppercase;
     border-bottom:1px solid  #E7742E;
 }
-.price_sescript{
+.price_descript{
     color: rgb(11, 20, 39);
     font-family: 'Montserrat-Regular',sans-serif;
     font-size: 18px;
@@ -124,25 +124,45 @@
     letter-spacing: 0%;
     text-align: left;
 }
-.full_price{
-    width: 322px;
-    height: 52px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+.price_title{
+    margin-top: 41px;
+    padding: 8px 18px;
     color: rgb(11, 20, 39);
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 120%;
-    text-align: center;
+    font-family: 'Montserrat-Medium',sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: left;
     text-transform: uppercase;
-    border-radius: 10px;
-    background: radial-gradient(50.00% 50.00% at 50% 50%,rgb(247, 167, 12),rgb(231, 116, 46) 100%);
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    background: rgb(245, 245, 245)
 }
 
+.price_wrapp{
+    margin-bottom: 32px;
+}
+
+.price_list{
+list-style: none;
+}
+.price_list__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 36px ;
+    color: rgb(11, 20, 39);
+    font-family: 'Montserrat-Regular',sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: left;
+    border-bottom:1px solid lightgrey;
+}
+.price_list__item_text{
+    max-width:600px ;
+}
 
 /* credo=========================== */
 

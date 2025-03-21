@@ -120,9 +120,11 @@
   .navigate__item_link {
     list-style: none;
     text-decoration: none;
-    color:var(--color-current) ;
+    color:white;
 }
-
+.navigate__item_link:hover{
+  color:#e7742e;
+}
 
  .navigate__list {
     display: flex;

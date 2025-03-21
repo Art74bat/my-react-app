@@ -89,3 +89,7 @@
 .checkbox_label{
     margin-bottom: 32px;
 }
+.checkbox{
+    margin-right: 10px;
+    transform: scale(2);
+}

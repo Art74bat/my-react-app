@@ -1,47 +1,51 @@
-import styles from "./css/Computers.module.css";
+
 import { Link } from 'react-router-dom';
-// import { useState } from "react";
-// import Device from "./components/Devices";
-// import Manufacture from "./components/Manufacture";
 import ComputersImage from "../../public/images/comp/Computers.png";
 import CompPicture from "../../public/images/comp/CompPicture.png";
 import GetConsult from "./components/Getconsult";
 import PriceForm from "./components/PriceForm";
+import { GetPeiceList } from "./components/GetPriseList";
+import styles from "./css/Computers.module.css";
+import { useEffect, useState } from 'react';
 
+function OutItem({ items }) {
+    return (
+        <>
+            { items.map((item) => (
+                <ul className={styles.price_list}>    
+                <li className={styles.price_list__item}>
+                    <span className={styles.price_list__item_text}>{item.description}</span>
+                    <span>{item.price} руб.</span>
+                </li>
+            </ul>
+            ))}
+        </>
+    )
+}
 const Computers = () => {
-    // const [errors, setErrors] = useState([]);
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     phone: '',
-    //     message: '',
-    //     calls: 1,
-    // });
 
-    // async function addCalls(e) {
-    //     e.preventDefault();
-    //     const res = await fetch(`/api/calls`, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(formData),
-    //     });
+        const [hard,setHard] = useState([]);
+        const [soft,setSoft] = useState([]);
 
-    //     const data = await res.json();
+        useEffect(() => {
+            // Загружаем данные 
+            const fetchHard = async () => {
+                const res =await fetch('/api/hards');
+                const data = await res.json();
+              setHard(data);
+            };
+            const fetchSoft = async () => {
+                const res =await fetch('/api/softs');
+                const data = await res.json();
+              setSoft(data);
+            };
+        
+            fetchHard();
+            fetchSoft();
+          }, []);
 
-    //     if (data.errors) {
-    //         setErrors(data.errors);
-    //     } else if (data.message) {
-    //         alert(data.message);
-    //         setFormData({
-    //             name: '',
-    //             phone: '',
-    //             message: '',
-    //             calls: 1,
-    //         });
-    //         setErrors([]);
-    //     }
-    // }
+          const DataHard = hard.filter(item => item.category === 'Компьютеры');
+
 
     return (
         <>
@@ -82,13 +86,21 @@ const Computers = () => {
             <section className={styles.price}>
                 <div className={styles.container}>
                 <h2 className={styles.section__title}>стоимость работ</h2>
-                <p className={styles.price_sescript}>
+                <p className={styles.price_descript}>
                 Наши цены на услуги по ремонту компьютеров окончательны, то есть не включают скрытых надбавок, которые в дальнейшем могут привести к значительному увеличению стоимости ремонта. После бесплатной диагностики окончательная смета работ составляется из нижеуказанных цен плюс стоимость комплектующих в случае необходимости их замены.
                 </p>
                 </div>
-
-
-                <Link className={styles.full_price} to="/price">Полный прайс-лист <span className={styles.price_icon_btn}><img src="../images/comp/arr.png" alt="icon" /></span> </Link>
+                <div className={styles.container}>
+                <h3 className={styles.price_title}>Аппаратная часть</h3>
+                <div className={styles.price_wrapp}>
+                    <OutItem items={DataHard}/>
+                </div>
+                <h3 className={styles.price_title}>Программная часть</h3>
+                <div className={styles.price_wrapp}>
+                <OutItem items={soft}/>
+                </div>
+                <GetPeiceList route={'price'}/>
+                </div>
             </section>
             <section className={styles.credo}>
                 <div className={styles.container}>
